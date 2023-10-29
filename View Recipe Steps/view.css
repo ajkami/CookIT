@@ -168,6 +168,18 @@ body {
     cursor: pointer;
 }
 
+.picture-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.picture {
+    height: 100%;
+    width: 100%;
+}
+
 
 
 

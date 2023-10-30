@@ -46,8 +46,6 @@ document.getElementById("delete_button").addEventListener("click", function() {
     document.getElementById("delete_popup").style.display = "block";
 });
 
-
-
 document.getElementById("change_password_button").addEventListener("click", function() {
     document.getElementById("passwordpopup").style.display = "block";
 });

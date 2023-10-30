@@ -570,6 +570,16 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.popup-change-content {
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  color: black; /* Text color is set to black */
+}
+
 /* Styles for the popup content */
 .popup-content {
   position: absolute;

@@ -52,6 +52,10 @@ document.getElementById("change_password_button").addEventListener("click", func
     document.getElementById("passwordpopup").style.display = "block";
 });
 
+document.getElementById("edit_account_button").addEventListener("click", function() {
+    document.getElementById("accountpopup").style.display = "block";
+});
+
 /*
 
 document.getElementById("close-popup").addEventListener("click", function() {

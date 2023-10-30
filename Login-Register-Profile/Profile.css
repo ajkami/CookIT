@@ -572,6 +572,15 @@
 
 .popup-change-content {
   text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 label {
@@ -633,7 +642,14 @@ input[type="password"] {
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  margin-top: 20px;
 }
+
+h2_changepwd {
+  color: black; /* Header text color is set to black */
+  margin-top: 0;
+}
+
 
 #confirm-change-button:hover {
   background-color: #0056b3;

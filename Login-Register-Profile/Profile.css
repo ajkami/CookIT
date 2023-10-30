@@ -635,7 +635,7 @@ input[type="password"] {
   border-radius: 5px;
 }
 
-#confirm-change-button {
+.confirm-change-button {
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -645,12 +645,14 @@ input[type="password"] {
   margin-top: 20px;
 }
 
+#confirm-change-button:hover {
+  background-color: #0056b3;
+}
+
 h2_changepwd {
   color: black; /* Header text color is set to black */
   margin-top: 0;
 }
 
 
-#confirm-change-button:hover {
-  background-color: #0056b3;
-}
+

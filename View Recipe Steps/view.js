@@ -31,3 +31,7 @@ window.addEventListener("click", windowOnClick);
      });
    });
  });
+
+ function myalert() { 
+  alert("The quantities of your ingredients have been successfully updated following the completion of this recipe!"); 
+} 

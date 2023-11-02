@@ -8,7 +8,14 @@
 
 a:link{
     text-decoration: none;
+    color: #fff;
 }
+
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
 
 .html   {
     font-size: 62.5%;
@@ -16,14 +23,15 @@ a:link{
   
 body {
 font-family: "Poppins", sans-serif;
+/* background-color: #F1DEC9; */
 }
 
 .navbar {
-    box-shadow: 0px 5px 10px 0px #aaa;
+    /* box-shadow: 0px 5px 10px 0px #cdae88; */
     position: fixed;
     width: 100%;
-    background: #fff;
-    color: #000;
+    background: #D2B48C;
+    color: #fff;
     opacity: 0.95;
     height: 50px;
     z-index: 12;
@@ -71,7 +79,7 @@ font-family: "Poppins", sans-serif;
     height: 4px;
     width: 100%;
     border-radius: 10px;
-    background: #333;
+    background: #fff;
   }
 
   .navbar-container .hamburger-lines .line1 {
@@ -90,7 +98,7 @@ font-family: "Poppins", sans-serif;
 
   .navbar .menu-items {
     padding-top: 100px;
-    background: #fff;
+    background: #A4907C;
     height: 100vh;
     max-width: 300px;
     transform: translate(-150%);
@@ -99,7 +107,7 @@ font-family: "Poppins", sans-serif;
     margin-left: -40px;
     padding-left: 60px;
     transition: transform 0.5s ease-in-out;
-    box-shadow: 5px 0px 10px 0px #aaa;
+    /* box-shadow: 5px 0px 10px 0px #aaa; */
 
   }
 
@@ -128,7 +136,7 @@ font-family: "Poppins", sans-serif;
   }
 
   .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
-    transform: scaleY(0);
+    transform: scaleZ(0);
   }
 
   .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
@@ -201,7 +209,7 @@ font-family: "Poppins", sans-serif;
     width: 101px;
     height: 36px;
     position: absolute;
-    background: white;
+    background: #8D7B68;
     border-radius: 20px;
     border: 2px rgba(0, 0, 0, 0.06) solid;
   }
@@ -210,9 +218,8 @@ font-family: "Poppins", sans-serif;
     left: 16px;
     top: 7.5px;
     position: absolute;
-    color: black;
+    color: #fff;
     font-size: 16px;
-    font-family: Inter;
     font-weight: 600;
   }
 
@@ -222,8 +229,37 @@ font-family: "Poppins", sans-serif;
     position: absolute;
     color: black;
     font-size: 20px;
-    font-family: Inter;
     font-weight: 600;
     line-height: 26px;
     word-wrap: break-word;
   }
+
+  /* BUTTON */
+  .ButtonContainer {
+    position: absolute;
+    left: 1266px;
+    top: 468px;
+    width: 231px;
+    height: 246px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 47px;
+  }
+  
+  .ItemButton {
+    align-self: stretch;
+    flex: 1 1 0;
+    padding: 18.5px 27px 18.5px 26px;
+    background: #8D7B68;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 25px;
+  }
+
+  

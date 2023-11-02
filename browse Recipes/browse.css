@@ -6,6 +6,7 @@
 
 body {
   margin: 0;
+  color: black;
 }
 
 :root {
@@ -21,7 +22,6 @@ body {
 
 .hamburger-menu {
   --x-width: calc(var(--hamburger-height) * 1.41421356237);
-
   display: flex;
   flex-direction: column;
   gap: var(--hamburger-gap);
@@ -36,6 +36,7 @@ body {
 .hamburger-menu:has(input:checked) {
   --foreground: white;
   --background: #333;
+
 }
 
 .hamburger-menu:has(input:focus-visible)::before,
@@ -67,6 +68,7 @@ body {
   pointer-events: none;
 }
 
+
 .hamburger-menu:has(input:checked)::before {
   rotate: 45deg;
   width: var(--x-width);
@@ -91,9 +93,10 @@ body {
   padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
   background-color: rgba(0, 0, 0, 0.3);
   color: var(--background);
-  max-width: 18rem;
-  min-height: 10px;
-  font-size: 30px;
+  max-width: 15rem;
+  min-height: 388px;
+  font-size: 25px;
+  z-index: 2;
 }
 
 .hamburger-menu:has(input:checked) + .sidebar {
@@ -103,22 +106,31 @@ body {
 
 
 .container {
-    text-align: center;
-    padding: 20px;
-    font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 25px;
-    filter: none;
-    margin-top: 0;
+  top:0%;
+  width:100%;
+  height: 40%;
+  position: absolute;
+  background-image: url(./img/fp-fp-6661.jpg);
+  
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  filter: none;
+  z-index: -1; /* Adjust the z-index value */
 }
+.container-content{
+  position: absolute;
+  top: 0%;
+  height: 100%;
+  width: 100%;
+  /*backdrop-filter: blur(5px);*/
 
+}
 .title {
     font-weight: bold;
     color: #ffffff;
 }
 
-header {
-    background-image: url(./img/fp-fp-6661.jpg);
-}
 
 
 /* Styles for the search bar */
@@ -159,8 +171,8 @@ button[type="submit"]:hover {
     padding: 8px 15px;
     border: none;
     border-radius: 5px;
-    background-color: #ff7043;
-    color: #fff;
+    background-color: antiquewhite;
+    color: black;
     cursor: pointer;
 }
 
@@ -178,6 +190,8 @@ main {
 }
 
 .recipe-container {
+  position: absolute;
+  top:65%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around; /* Aligns recipes in the center */
@@ -186,12 +200,11 @@ main {
 
 .recipe {
     width: 500px;
-    margin: 10px;
-    color: white;
-    border: 5px solid rgba(8, 3, 3, 0.5);
-    padding: 10;
+    color: black;
+    border: 5px solid rgba(2, 2, 2, 0.2);
+    margin:3% 40px 0% 70px;
     border-radius: 5px;
-    background-color: rgba(48, 46, 46, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .recipe img {
@@ -205,6 +218,7 @@ main {
 
 .recipe-details {
     text-align: left;
+    color: #000000;
 
 }
 
@@ -216,20 +230,41 @@ main {
 .popup {
     display: none;
     position: fixed;
-    top: 0;
+    top: 0%;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
     z-index: 1;
 }
 
+
 .popup-content {
-    background-color: #D8C99B; 
+    text-align: center;
+    background-color: tan; 
+    position: absolute;
+    top:-14%;
+    left:35%;
     margin: 20% auto;
-    padding: 20px;
+    padding: 1px;
     border: 1px solid #000000;
-    width: 60%;
+    width: 30%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;;
+  width: 100%;
+  height: 100%;
+}
+
+li {
+  width: 50%; /* Two items per row */
+  height: 50%; /* Two items per column */
+  box-sizing: border-box;
+  border: 1px solid #D2B48C; /* Example border, you can modify this */
 }
 
 .time-options {
@@ -237,8 +272,8 @@ main {
     padding: 8px 15px;
     border: none;
     border-radius: 5px;
-    background-color: #ff7043;
-    color: #fff;
+    background-color: antiquewhite;
+    color: black;
     cursor: pointer;
 }
 
@@ -271,12 +306,134 @@ main {
     color: #ffcc00; /* Default color for empty stars */
 }
 
-.text-block__container {
+
+
+.text-block{
+  font-size: 22px;
+  position: absolute;
+  top:45%;
+    background-color: rgba(243, 243, 243, 0.3);
     text-align: center;
-    margin-bottom: 2%;
-    margin-left: 15%;
-    margin-right: 15%;
-    padding: 2%;
-    background-color: rgba(228, 149, 97, 0.2);
-    border-radius: 1%;
+    margin: 0% 20% 0% 20%;
+    border-radius: 8px;
+  }
+
+  *,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #eedbbd; /* Lighter tan for background */
+  color: #222; /* Darker text color */
+}
+
+/* Custom Tan color variable */
+:root {
+  --tan-color: #d2b48c; /* Custom tan color */
+  /* Existing variable declarations remain the same */
+}
+
+/* Rest of the existing CSS remains unchanged */
+
+/* Adjusted color scheme */
+
+/* Hamburger Menu */
+.hamburger-menu:has(input:checked) {
+  --foreground: var(--tan-color);
+  --background: #222; /* Dark background color */
+}
+
+/* Search Bar */
+input[type="text"] {
+  border: 2px solid var(--tan-color); /* Use the custom tan color for the border */
+}
+
+button[type="submit"] {
+  background-color: var(--tan-color); /* Use the custom tan color for the button */
+}
+
+button[type="submit"]:hover {
+  background-color: #b58c63; /* Slightly darker shade on hover */
+}
+
+/* Filter Buttons */
+.filter-buttons button {
+  background-color: #f5deb3; /* Light goldenrod color */
+  color: #222; /* Darker text color */
+}
+
+/* Recipe Boxes */
+.recipe {
+  border: 5px solid var(--tan-color); /* Use the custom tan color for the border */
+  background-color: rgba(210, 180, 140, 0.2); /* Adjusted tan background with transparency */
+}
+
+/* Popup */
+.popup-content {
+  background-color: var(--tan-color); /* Use the custom tan color for the popup */
+}
+
+.time-options {
+  background-color: #f5deb3; /* Light goldenrod color for time options */
+  color: #222; /* Darker text color */
+}
+
+/* Stars */
+.stars1::before,
+.stars2::before,
+.stars3::before {
+  color: #b8860b; /* Dark goldenrod color for stars */
+}
+
+.text-block {
+  background-color: rgba(243, 243, 243, 0.6); /* Slightly lighter background */
+}
+
+/* Additional Changes */
+
+.container {
+  background-image: url(./img/fp-fp-6661.jpg); /* Retained the background image */
+  background-size: cover;
+}
+
+.container-content {
+  /* Updated container content styles */
+  backdrop-filter: blur(2px); /* Reintroduced backdrop filter */
+  z-index: -1; /* Adjusted the z-index value */
+}
+
+.title {
+  color: #d2b48c; /* Used the custom tan color for title text */
+}
+
+.pfp{
+  position: fixed; /* Ensures the image remains fixed even when scrolling */
+  top: 20px; /* Adjust the top position as needed */
+  right: 20px; /* Adjust the right position as needed */
+  z-index: 99; /* Set a z-index to ensure the image stays on top of other content */
+  /* Additional styling */
+}
+
+.pfp img{
+  width: 50px; /* Adjust the width of the image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.recipe-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Initially hide the sidebar outside the viewport */
+  width: 30%; /* Adjust the width as desired */
+  height: 100vh; /* Set the height to cover the entire viewport */
+  background-color: antiquewhite; /* Set sidebar background color */
+  transition: right 0.3s ease; /* Add transition for smooth sliding effect */
+  overflow: auto; /* Enable scrolling if content exceeds the sidebar */
+  z-index: 2; /* Set a higher z-index to ensure it appears above other content */
+}
+
+.recipe-sidebar.active {
+  right: 0; /* Show the sidebar by bringing it to the viewport */
 }

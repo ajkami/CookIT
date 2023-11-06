@@ -287,7 +287,7 @@ pushProductCatList();
 //code for cart content switch
 const cartContent = document.querySelector(".cart-content");
 const checkoutButton = document.getElementById("btn-buy");
-const userInfoForm = document.querySelector(".order-confirmation");
+const userInfoForm = document.querySelector(".user-info-form");
 
 // Function to toggle between cart content and user information form
 function toggleCheckout() {

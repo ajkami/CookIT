@@ -194,7 +194,8 @@ font-family: "Poppins", sans-serif;
     margin: 238px 0px 0px 500px;
     display:flex;
     flex-direction: row;
-    gap: 30px
+    gap: 30px;
+    z-index: 12;
   }
 
   /* PICTURE HOLDER */

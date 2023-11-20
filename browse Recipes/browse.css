@@ -389,7 +389,7 @@ button[type="submit"]:hover {
 }
 
 .text-block {
-  background-color: rgba(243, 243, 243, 0.6); /* Slightly lighter background */
+  background-color: rgba(241, 181, 181, 0.451)/* Slightly lighter background */
 }
 
 /* Additional Changes */
@@ -428,7 +428,7 @@ button[type="submit"]:hover {
   right: -100%; /* Initially hide the sidebar outside the viewport */
   width: 30%; /* Adjust the width as desired */
   height: 100vh; /* Set the height to cover the entire viewport */
-  background-color: antiquewhite; /* Set sidebar background color */
+  background-color: #eedbbd; /* Set sidebar background color */
   transition: right 0.3s ease; /* Add transition for smooth sliding effect */
   overflow: auto; /* Enable scrolling if content exceeds the sidebar */
   z-index: 2; /* Set a higher z-index to ensure it appears above other content */

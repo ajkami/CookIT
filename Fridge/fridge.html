@@ -48,11 +48,11 @@
               <button class="increase">+</button>
             </div>
         
-            <div class="item" id="item3">
+            <div class="item"  id="item3">
               <img src="https://images.unsplash.com/photo-1630623093145-f606591c2546?auto=format&fit=crop&q=80&w=1965&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
               <label class="label">Ginger</label>
               <button class="decrease">-</button>
-              <input  type="number" value="1" min="0" readonly>
+              <input type="number" value="1" min="0" readonly>
               <button class="increase">+</button>
             </div>
           </div>
@@ -73,30 +73,48 @@
 
     <script>
       let isEditing = false;
-
-      // Get a reference to the button by its ID
+    
       const editButton = document.getElementById("editButton");
-      const decreaseButton = document.querySelectorAll('.decrease');
-      const increaseButton = document.querySelectorAll('.increase');
-
-      // Add a click event listener to the button
+      const decreaseButtons = document.querySelectorAll('.decrease');
+      const increaseButtons = document.querySelectorAll('.increase');
+      const inputFields = document.querySelectorAll('.item input');
+    
       editButton.addEventListener("click", function() {
         isEditing = !isEditing;
-
-        if(isEditing){
-          for (let i = 0; i < decreaseButton.length && i<increaseButton.length; i++) {
-            decreaseButton[i].style.display = "inline";
-            increaseButton[i].style.display = "inline";
+    
+        if (isEditing) {
+          for (let i = 0; i < decreaseButtons.length && i < increaseButtons.length; i++) {
+            decreaseButtons[i].style.display = "inline";
+            increaseButtons[i].style.display = "inline";
           }
-        } else{
-          for (let i = 0; i < decreaseButton.length && i<increaseButton.length; i++) {
-            decreaseButton[i].style.display = "none";
-            increaseButton[i].style.display = "none";
+        } else {
+          for (let i = 0; i < decreaseButtons.length && i < increaseButtons.length; i++) {
+            decreaseButtons[i].style.display = "none";
+            increaseButtons[i].style.display = "none";
           }
         }
-
+      });
+    
+      // Add event listeners to the increase buttons
+      increaseButtons.forEach((button, index) => {
+        button.addEventListener('click', function() {
+          if (isEditing) {
+            // base 10
+            inputFields[index].value = parseInt(inputFields[index].value, 10) + 1;
+          }
+        });
+      });
+    
+      // Add event listeners to the decrease buttons
+      decreaseButtons.forEach((button, index) => {
+        button.addEventListener('click', function() {
+          if (isEditing && parseInt(inputFields[index].value, 10) > 0) {
+            inputFields[index].value = parseInt(inputFields[index].value, 10) - 1;
+          }
+        });
       });
     </script>
+    
   </body>
 </html>
 

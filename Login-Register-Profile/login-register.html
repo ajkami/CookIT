@@ -92,6 +92,7 @@
                     <div class="u-form-group u-form-submit u-label-top">
                       <a href="#" class="u-btn u-btn-step u-btn-step-prev u-button-style u-btn-1">Back</a>
                       <a href="#" class="u-btn u-btn-step u-btn-step-next u-button-style u-btn-1">Next</a>
+                      <button class="u-btn u-btn-step u-btn-step-next u-button-style u-btn-1" onclick="showResetInstructions()">Reset Password</button>
                       <a href="#" class="u-btn u-btn-submit u-button-style u-btn-1">Submit</a>
                       <input type="submit" value="submit" class="u-form-control-hidden">
                     </div>
@@ -207,4 +208,17 @@
   }
 </script>
   
+<script>
+  function showResetInstructions() {
+    var element = document.getElementById("name-558c");
+    var inputValue = element.value.trim(); // Trim removes leading and trailing whitespaces
+
+    if (inputValue !== "") {
+      alert("Password reset instructions have been emailed!");
+    } else {
+      alert("Please enter your email before resetting the password.");
+    }
+  }
+</script>
+
 </body></html>

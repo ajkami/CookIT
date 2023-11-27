@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <header>
+        <div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('mySidenav')">&times;</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">Contact</a>
+            </div>
+            <span style="font-size:30px;cursor:pointer" onclick="toggleNav('mySidenav')">&#9776;</span>
+        </div>
+        <h1>CookIT</h1>
+        <div>
+            <div id="fridgeSidenav" class="sidenav fridgeSidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('fridgeSidenav')">&times;</a>
+                <div class="fridgeSidenav-container">
+                    <h2>Add Items to Fridge</h2>
+                    
+                    <div class="fridgeSidenav-itemsContainer">
+                        <div class="fridgeSidenav-item">
+                            <div class="fridgeSidenav-imageContainer">
+                                <img src="./assets/pretzel.jpg" />
+                            </div>
+                            <div class="fridgeSidenav-textContainer">
+                                <p>Pretzel</p>
+                                <div class="fridgeSidenav-incDec">
+                                    <div class="incDecButton dec">-</div>
+                                    <input type="number" value="1" min="0" readonly>
+                                    <div class="incDecButton inc">+</div>
+                                </div>
+                            </div>
+                            <div class="removeButton">Remove</div>
+                        </div>
+
+                        <div class="fridgeSidenav-item">
+                            <div class="fridgeSidenav-imageContainer">
+                                <img src="./assets/pretzel.jpg" />
+                            </div>
+                            <div class="fridgeSidenav-textContainer">
+                                <p>Pretzel</p>
+                                <div class="fridgeSidenav-incDec">
+                                    <div class="incDecButton dec">-</div>
+                                    <input type="number" value="1" min="0" readonly>
+                                    <div class="incDecButton inc">+</div>
+                                </div>
+                            </div>
+                            <div class="removeButton">Remove</div>
+                        </div>
+
+                        <!-- ADD MORE IF NEEDED -->
+                    </div>
+
+                    <button>Update Fridge</button>
+                </div>
+            </div>
+            <img onclick="toggleNav('fridgeSidenav')" src="assets/fridgeIcon.png" />
+        </div>
+    </header>
+</head>
+
+<body>
+    <div class="app">
+        <div class="search">
+            <h2>Add Items Now</h2>
+            <p>By Searching with the seach bar, or by browsing through the categories</p>
+            <div class="search-container">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="browseContainer">
+            <h3>Browse by Category</h3>
+            <div class="filter">
+                <div class="itemFilter">Fruits</div>
+                <div class="itemFilter">Dairy</div>
+                <div class="itemFilter">Baked Goods</div>
+            </div>
+        </div>
+
+        <div>
+            <!-- BAKED GOODS -->
+            <div class="category">
+                <div class="categoryName">
+                    <p>Baked Goods</p>
+                </div>
+                <div class="itemsContainer">
+                    <div class="item">
+                        <div class="imageContainer"><img src="./assets/pretzel.jpg" /></div>
+                        <div class="textContainer">
+                            <p>Pretzel</p>
+                            <button>Add to Fridge</button>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="imageContainer"><img src="./assets/croissant.jpg" /></div>
+                        <div class="textContainer">
+                            <p>Croissant</p>
+                            <button>Add to Fridge</button>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="imageContainer"><img src="./assets/donut.jpg" /></div>
+                        <div class="textContainer">
+                            <p>Donut</p>
+                            <button>Add to Fridge</button>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="imageContainer"><img src="./assets/naan.jpg" /></div>
+                        <div class="textContainer">
+                            <p>Naan</p>
+                            <button>Add to Fridge</button>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="imageContainer"><img src="./assets/brownie.jpg" /></div>
+                        <div class="textContainer">
+                            <p>Brownie</p>
+                            <button>Add to Fridge</button>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="imageContainer"><img src="./assets/cookie.jpg" /></div>
+                        <div class="textContainer">
+                            <p>Cookie</p>
+                            <button>Add to Fridge</button>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="imageContainer"><img src="./assets/cake.jpg" /></div>
+                        <div class="textContainer">
+                            <p>Cake</p>
+                            <button>Add to Fridge</button>
+                        </div>
+                    </div>
+
+                    <!-- ADD MORE IF NEEDED -->
+
+                </div>
+            </div>
+
+            <!-- DAIRY PRODUCTS -->
+            <div class="category">
+                <div class="categoryName">
+                    <p>Dairy Products</p>
+                </div>
+                <div class="itemsContainer">
+                    <div class="item">
+                        <div class="imageContainer"><img src="./assets/milk.jpg" /></div>
+                        <div class="textContainer">
+                            <p>Milk</p>
+                            <button>Add to Fridge</button>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="imageContainer"><img src="./assets/yogurt.jpg" /></div>
+                        <div class="textContainer">
+                            <p>Yogurt</p>
+                            <button>Add to Fridge</button>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="imageContainer"><img src="./assets/butter.jpg" /></div>
+                        <div class="textContainer">
+                            <p>Butter</p>
+                            <button>Add to Fridge</button>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="imageContainer"><img src="./assets/cheese.jpg" /></div>
+                        <div class="textContainer">
+                            <p>Cheese</p>
+                            <button>Add to Fridge</button>
+                        </div>
+                    </div>
+
+                    <!-- ADD MORE IF NEEDED -->
+
+                </div>
+            </div>
+
+            <!-- ADD MORE IF NEEDED -->
+
+
+        </div>
+
+    </div>
+
+    <script>
+        let navOpen = false;
+        let fridgenavOpen = false;
+
+        function toggleNav(sidenavId) {
+            const isOpen = (sidenavId === "mySidenav") ? navOpen : fridgenavOpen;
+            const width = isOpen ? "0" : "300px";
+
+            if (sidenavId === "mySidenav") {
+                navOpen = !navOpen;
+            } else if (sidenavId === "fridgeSidenav") {
+                fridgenavOpen = !fridgenavOpen;
+            }
+
+            document.getElementById(sidenavId).style.width = width;
+        }
+
+    </script>
+
+</body>
+
+</html>

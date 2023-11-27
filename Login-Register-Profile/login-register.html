@@ -1,3 +1,5 @@
+<!-- some stylings have been modified from their originals provides by Google and NicePages -->
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -5,7 +7,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>Login</title>
-    <link rel="stylesheet" href="style.css" media="screen">
+    <link rel="stylesheet" href="loginregister.css" media="screen">
 <link rel="stylesheet" href="Login.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="buttons.js" defer=""></script>
@@ -77,19 +79,20 @@
                       <div class="u-active u-carousel-item u-form-step u-slide">
                         <div class="u-form-group u-form-name u-label-top">
                           <label for="name-558c" class="u-label">Email</label>
-                          <input type="text" placeholder="ben@example.com" id="name-558c" name="email" class="u-input u-input-rectangle" required="">
+                          <input type="email" placeholder="ben@example.com" id="name-558c" name="email" class="u-input u-input-rectangle" required="">
                         </div>
                       </div>
                       <div class="u-carousel-item u-form-step u-slide">
                         <div class="u-form-group u-label-top u-form-group-3">
                           <label for="email-558c" class="u-label">Password</label>
-                          <input type="text" id="email-558c" name="password" class="u-input u-input-rectangle" required="required">
+                          <input type="password" id="email-558c" name="password" class="u-input u-input-rectangle" required="required">
                         </div>
                       </div>
                     </div>
                     <div class="u-form-group u-form-submit u-label-top">
                       <a href="#" class="u-btn u-btn-step u-btn-step-prev u-button-style u-btn-1">Back</a>
                       <a href="#" class="u-btn u-btn-step u-btn-step-next u-button-style u-btn-1">Next</a>
+                      <button class="u-btn u-btn-step u-btn-step-next u-button-style u-btn-1" onclick="showResetInstructions()">Reset Password</button>
                       <a href="#" class="u-btn u-btn-submit u-button-style u-btn-1">Submit</a>
                       <input type="submit" value="submit" class="u-form-control-hidden">
                     </div>
@@ -117,8 +120,12 @@
                           <input type="email" placeholder="Email" id="email-558c" name="email" class="u-input u-input-rectangle" required="">
                         </div>
                         <div class="u-form-group u-label-top u-form-group-7">
-                          <label for="text-b787" class="u-label">Create a Password</label>
-                          <input type="text" placeholder="password" id="text-b787" name="password_new" class="u-input u-input-rectangle" required="required">
+                          <label for="text-b787" class="u-label">Create a Password (min 8 characters, mix of uppercase and lowercase, and one number)</label>
+                          <input type="password" placeholder="password" id="text-b787" name="password_new" class="u-input u-input-rectangle" required="required">
+                        </div>
+                        <div class="u-form-group u-label-top u-form-group-7">
+                          <label for="text-b787" class="u-label">Confirm Password</label>
+                          <input type="password" placeholder="password" id="text-b787a" name="password_newa" class="u-input u-input-rectangle" required oninput="validatePasswords()">
                         </div>
                       </div>
                       <div class="u-carousel-item u-form-step u-slide">
@@ -135,8 +142,8 @@
                           <input type="text" placeholder="Enter your city" id="name-de44" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
                         </div>
                         <div class="u-form-group u-form-partition-factor-2 u-label-top u-form-group-11">
-                          <label for="name-de44" class="u-label">Zip</label>
-                          <input type="text" placeholder="Enter your zip" id="name-de44" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
+                          <label for="name-de44" class="u-label">Postal Code</label>
+                          <input type="text" placeholder="Enter your Postal Code" id="name-de44" name="city" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
                         </div>
                         <div class="u-form-country u-form-group u-label-top u-form-group-12">
                           <label for="country-de44" class="u-label">Country</label>
@@ -180,5 +187,38 @@
     <footer class="u-align-center u-clearfix u-custom-color-1 u-footer u-footer" id="sec-472a"><div class="u-clearfix u-sheet u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1">CookIT, 2023</p>
       </div></footer>
+
+<script>
+  function validatePasswords() {
+    var password1 = document.getElementById("text-b787").value;
+    var password2 = document.getElementById("text-b787a").value;
+
+    // Validate length, one uppercase letter, one lowercase letter, and one digit
+    var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+    if (password1 !== password2) {
+      document.getElementById("text-b787a").setCustomValidity("Passwords do not match");
+    } else if (!regex.test(password1)) {
+      document.getElementById("text-b787").setCustomValidity("Password must be at least 8 characters with one uppercase letter, one lowercase letter, and one digit");
+      document.getElementById("text-b787a").setCustomValidity("");
+    } else {
+      document.getElementById("text-b787").setCustomValidity("");
+      document.getElementById("text-b787a").setCustomValidity("");
+    }
+  }
+</script>
   
+<script>
+  function showResetInstructions() {
+    var element = document.getElementById("name-558c");
+    var inputValue = element.value.trim(); // Trim removes leading and trailing whitespaces
+
+    if (inputValue !== "") {
+      alert("Password reset instructions have been emailed!");
+    } else {
+      alert("Please enter your email before resetting the password.");
+    }
+  }
+</script>
+
 </body></html>

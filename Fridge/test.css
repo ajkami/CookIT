@@ -20,6 +20,9 @@ header img {
     cursor: pointer;
 }
 
+
+/* SIDE BAR */
+
 .sidenav {
     height: 100%;
     width: 0;
@@ -53,6 +56,10 @@ header img {
     font-size: 36px;
     margin-left: 50px;
 }
+/* END OF SIDE BAR */
+
+
+/* FRIDGE SIDE BAR */
 
 .fridgeSidenav{
     left: unset;
@@ -146,6 +153,8 @@ header img {
     background: #d2b48c;
     border: none;
 }
+
+/* END OF FRIDGE SIDE BAR */
 
 .incDecButton{
     color: white;

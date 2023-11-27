@@ -93,7 +93,7 @@
                       <a href="#" class="u-btn u-btn-step u-btn-step-prev u-button-style u-btn-1">Back</a>
                       <a href="#" class="u-btn u-btn-step u-btn-step-next u-button-style u-btn-1">Next</a>
                       <button class="u-btn u-btn-step u-btn-step-next u-button-style u-btn-1" onclick="showResetInstructions()">Reset Password</button>
-                      <a href="#" class="u-btn u-btn-submit u-button-style u-btn-1">Submit</a>
+                      <button onclick="goToLink()" class="u-btn u-btn-submit u-button-style u-btn-1">Submit</button>
                       <input type="submit" value="submit" class="u-form-control-hidden">
                     </div>
                     <div class="u-form-send-message u-form-send-success">Logged in!</div>
@@ -102,7 +102,7 @@
                     <input type="hidden" name="formServices" value="e7ce658b-df0e-244f-246c-7b31d0bcc61c">
                   </form>
                 </div>
-                <a href="https://google.ca" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-hover-white u-btn-4">Continue Browsing as Guest</a>
+                <a href="/browse%20Recipes/browse2.html" class="u-border-2 u-border-black u-btn u-button-style u-hover-black u-none u-text-hover-white u-btn-4">Continue Browsing as Guest</a>
               </div>
             </div>
             <div class="u-container-style u-tab-pane" id="tab-4d57" role="tabpanel" aria-labelledby="link-tab-4d57">
@@ -218,6 +218,12 @@
     } else {
       alert("Please enter your email before resetting the password.");
     }
+  }
+</script>
+
+<script>
+  function goToLink() {
+    window.location.href = "/browse%20Recipes/browse2.html";
   }
 </script>
 

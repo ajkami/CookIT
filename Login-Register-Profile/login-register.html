@@ -187,17 +187,24 @@
         <p class="u-small-text u-text u-text-variant u-text-1">CookIT, 2023</p>
       </div></footer>
 
-      <script>
-        function validatePasswords() {
-          var password1 = document.getElementById("text-b787").value;
-          var password2 = document.getElementById("text-b787a").value;
-    
-          if (password1 !== password2) {
-            document.getElementById("text-b787a").setCustomValidity("Passwords do not match");
-          } else {
-            document.getElementById("text-b787a").setCustomValidity("");
-          }
-        }
-      </script>
+<script>
+  function validatePasswords() {
+    var password1 = document.getElementById("text-b787").value;
+    var password2 = document.getElementById("text-b787a").value;
+
+    // Validate length, one uppercase letter, one lowercase letter, and one digit
+    var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+    if (password1 !== password2) {
+      document.getElementById("text-b787a").setCustomValidity("Passwords do not match");
+    } else if (!regex.test(password1)) {
+      document.getElementById("text-b787").setCustomValidity("Password must be at least 8 characters with one uppercase letter, one lowercase letter, and one digit");
+      document.getElementById("text-b787a").setCustomValidity("");
+    } else {
+      document.getElementById("text-b787").setCustomValidity("");
+      document.getElementById("text-b787a").setCustomValidity("");
+    }
+  }
+</script>
   
 </body></html>

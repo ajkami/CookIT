@@ -236,7 +236,12 @@ body {
 .cooking-time {
     height: 20px;
     padding-left: 10px;
-    padding-bottom: 10px;
+}
+
+.nutritional-value {
+  height: 20px;
+  padding-left: 10px;
+  padding-bottom: 10px;
 }
 
 .ingredients-container {

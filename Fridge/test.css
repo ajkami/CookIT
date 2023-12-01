@@ -20,6 +20,24 @@ header img {
     cursor: pointer;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(235, 235, 235);
+    border-radius: 5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(187, 153, 110);
+    border-radius: 5px;
+  }
+  
 
 /* SIDE BAR */
 

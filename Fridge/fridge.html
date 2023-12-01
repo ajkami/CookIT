@@ -7,83 +7,110 @@
     <link rel="stylesheet" href="fridge.css">
   </head>
   <body>
-    <div class="IngredientsOpen">
-
-      <!-- FRIDGE -->
-      <div class="Rectangle6" style="width: 608px; height: 954px; left: 565px; top: 188px; position: absolute; background: #D9D9D9; border-radius: 58px"></div>
-      <div class="Rectangle7" style="width: 545px; height: 862px; left: 597px; top: 220px; position: absolute; background: #F8F8F8; border-radius: 58px"></div>
-      <div class="Rectangle8" style="width: 491px; height: 851px; left: 624px; top: 243px; position: absolute; background: #E9E9E9; border-radius: 58px"></div>
-      <div class="Rectangle9" style="width: 540px; height: 19px; left: 600px; top: 492px; position: absolute; background: #F8F8F8; border-radius: 58px"></div>
-      <div class="Rectangle10" style="width: 529px; height: 19px; left: 613px; top: 830px; position: absolute; background: #F8F8F8; border-radius: 58px"></div>
-
-      <!-- TOMATO -->
-      <div class="pictureHolder" style="width: 176px; height: 187px; left: 671px; top: 283px; position: absolute; border-radius: 24px; overflow: hidden; border: 2px">
-        <img style="width: auto; height: 100%; left: -3px; position: absolute" src="https://images.unsplash.com/photo-1571680322279-a226e6a4cc2a?auto=format&fit=crop&q=80&w=1786&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-        <div class="InputField" style="width: 101px; height: 36px; left: 42px; top: 141px; position: absolute; background: white; border-radius: 20px; border: 2px rgba(0, 0, 0, 0.06) solid">
-          <div class="Qty10" style="left: 16px; top: 7.50px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 600;">Qty: 10</div>
+    <div id="app">
+      <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="#browse">Browse</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#fridge">Fridge</a></li>
+                <li><a href="#profile">Profile</a></li>
+            </ul>
+            <h1 class="logo">CookIT</h1>
+    <div id="app">
+      <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="#browse">Browse</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#fridge">Fridge</a></li>
+                <li><a href="#profile">Profile</a></li>
+            </ul>
+            <h1 class="logo">CookIT</h1>
         </div>
-        <div class="label" style="left: 51px; top: 7px; position: absolute; color: black; font-size: 20px; font-family: Inter; font-weight: 600; line-height: 26px; word-wrap: break-word">Tomato</div>
-      </div>
+      </nav>
 
-      <!-- SHALLOT -->
-      <div class="pictureHolder" style="width: 176px; height: 187px; left: 897px; top: 283px; position: absolute; border-radius: 24px; overflow: hidden; border: 2px">
-        <img style="width: auto; height: 100%; left: -53px; position: absolute" src="https://images.unsplash.com/photo-1585849834908-3481231155e8?auto=format&fit=crop&q=80&w=2071&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-        <div class="InputField" style="width: 101px; height: 36px; left: 42px; top: 141px; position: absolute; background: white; border-radius: 20px; border: 2px rgba(0, 0, 0, 0.06) solid">
-          <div class="Qty10" style="left: 16px; top: 7.50px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 600;">Qty: 7</div>
-        </div>
-        <div class="label" style="left: 51px; top: 7px; position: absolute; color: black; font-size: 20px; font-family: Inter; font-weight: 600; line-height: 26px; word-wrap: break-word">Shallot</div>
+       <!-- FRIDGE -->
+       <div class="rectangle-container">
+        <div class="rectangle rectangle-6"></div>
+        <div class="rectangle rectangle-7"></div>
+        <div class="rectangle rectangle-8"></div>
+        <div class="rectangle rectangle-9"></div>
+        <div class="rectangle rectangle-10"></div>
+      </nav>
+
+
+      <!-- BUTTON -->
+      <div class="ButtonContainer">
+        <button class="ItemButton">Add Items</button>
+        <button class="ItemButton" id="editButton">Edit Items</button>
       </div>
       
-      <!-- GINGER -->
-      <div class="pictureHolder" style="width: 176px; height: 187px; left: 671px; top: 533px; position: absolute; border-radius: 24px; overflow: hidden; border: 2px">
-        <img style="width: auto; height: 100%; left: -3px; top: -28px; position: absolute" src="https://images.unsplash.com/photo-1630623093145-f606591c2546?auto=format&fit=crop&q=80&w=1965&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-        <div class="InputField" style="width: 101px; height: 36px; left: 42px; top: 141px; position: absolute; background: white; border-radius: 20px; border: 2px rgba(0, 0, 0, 0.06) solid">
-          <div class="Qty10" style="left: 16px; top: 7.50px; position: absolute; color: black; font-size: 16px; font-family: Inter; font-weight: 600;">Qty: 3</div>
+      <div class="itemsContainer">
+        <div class="item" id="item1">
+          <img src="https://images.unsplash.com/photo-1571680322279-a226e6a4cc2a?auto=format&fit=crop&q=80&w=1786&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          <label class="label">Tomato</label>
+          <button class="decrease">-</button>
+          <input class="InputField" type="number" value="1" min="0" readonly>
+          <button class="increase">+</button>
         </div>
-        <div class="label" style="left: 51px; top: 7px; position: absolute; color: black; font-size: 20px; font-family: Inter; font-weight: 600; line-height: 26px; word-wrap: break-word">Ginger</div>
-      </div>
-
-
       
-      <div class="PageHeading" style="width: 1536px; height: 143px; left: 0px; top: 0px; position: absolute; background: white">
-        <div class="MyFridge" style="left: 698px; top: 33px; position: absolute; color: black; font-size: 64px; font-family: Newsreader; font-weight: 400; line-height: 76.80px; word-wrap: break-word">My Fridge</div>
-        <div class="Divider" style="width: 1536px; height: 0px; left: 0px; top: 131px; position: absolute; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); border: 2px #E6E6E6 solid"></div>
-      </div>
-      <div class="Button" style="width: 231px; height: 246px; padding-top: 31px; padding-bottom: 32px; padding-left: 30px; padding-right: 30px; left: 1266px; top: 468px; position: absolute; flex-direction: column; justify-content: center; align-items: flex-start; gap: 47px; display: inline-flex">
-        <div class="CartButton" style="align-self: stretch; flex: 1 1 0; padding-top: 18.50px; padding-bottom: 18.50px; padding-left: 27px; padding-right: 26px; background: #426B1F; border-radius: 4px; overflow: hidden; justify-content: center; align-items: center; display: inline-flex">
-          <div class="AddItems" style="text-align: center; color: white; font-size: 24px; font-family: Inter; font-weight: 600; line-height: 31.20px; word-wrap: break-word">Add Items</div>
+        <div class="item" id="item2">
+          <img src="https://images.unsplash.com/photo-1585849834908-3481231155e8?auto=format&fit=crop&q=80&w=2071&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+          <label class="label">Shallot</label>
+          <button class="decrease">-</button>
+          <input class="InputField" type="number" value="1" min="0" readonly>
+          <button class="increase">+</button>
         </div>
-        <div class="CartButton" style="align-self: stretch; flex: 1 1 0; padding-top: 18.50px; padding-bottom: 18.50px; padding-left: 28px; padding-right: 27px; background: #426B1F; border-radius: 4px; overflow: hidden; justify-content: center; align-items: center; display: inline-flex">
-          <div class="EditItems" style="text-align: center; color: white; font-size: 24px; font-family: Inter; font-weight: 600; line-height: 31.20px; word-wrap: break-word">Edit Items</div>
-        </div>
-      </div>
-      <div class="HamburgerOpen" style="width: 322px; height: 1021px; left: -4px; top: 0px; position: absolute; background: #F2F2F2">
-        <div class="Links" style="width: 274px; height: 695px; left: 22px; top: 175px; position: absolute">
-          <div class="IcSharpHome" style="width: 88px; height: 88px; left: 13px; top: 32px; position: absolute">
-            
-          </div>
-          <div class="Vector" style="width: 47px; height: 45px; left: 32px; top: 198px; position: absolute; background: black"></div>
-          <div class="MdiFridge" style="width: 55px; padding-top: 5.33px; padding-bottom: 5.33px; padding-left: 11.62px; padding-right: 4.79px; left: 27px; top: 321px; position: absolute; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
-            
-          </div>
-          <div class="Browse" style="width: 154px; height: 55px; left: 106px; top: 48px; position: absolute; text-align: center; color: black; font-size: 32px; font-family: Inter; font-weight: 600; line-height: 41.60px; word-wrap: break-word">Browse</div>
-          <div class="Shop" style="width: 104px; height: 55px; left: 112px; top: 193px; position: absolute; text-align: center; color: black; font-size: 32px; font-family: Inter; font-weight: 600; line-height: 41.60px; word-wrap: break-word">Shop</div>
-          <div class="Fridge" style="width: 154px; height: 55px; left: 100px; top: 327px; position: absolute; text-align: center; color: black; font-size: 32px; font-family: Inter; font-weight: 600; line-height: 41.60px; word-wrap: break-word">Fridge</div>
-        </div>
-        <div class="Close" style="width: 173px; height: 57px; left: 112px; top: 104px; position: absolute; text-align: center; color: black; font-size: 36px; font-family: Inter; font-weight: 600; word-wrap: break-word">Close</div>
-        <div class="HamburgerIcon" style="width: 117px; height: 93px; left: 22px; top: 82px; position: absolute">
-          <div class="Rectangle13" style="width: 54px; height: 5px; left: 38px; top: 71.18px; position: absolute; transform: rotate(-45deg); transform-origin: 0 0; background: black"></div>
-          <div class="Rectangle14" style="width: 54px; height: 5px; left: 41.54px; top: 33px; position: absolute; transform: rotate(45deg); transform-origin: 0 0; background: black"></div>
-        </div>
-      </div>
-      <div class="ProfileButton" style="width: 356px; height: 106px; left: 0px; top: 593px; position: absolute">
-        <div class="Rectangle14" style="width: 247px; height: 60px; left: 30px; top: 25px; position: absolute; background: #D9D9D9; border-radius: 47px"></div>
-        <div class="Profile" style="left: 149px; top: 31px; position: absolute; text-align: center; color: black; font-size: 32px; font-family: Inter; font-weight: 600; line-height: 41.60px; word-wrap: break-word">Profile</div>
-        <div class="PhUserFill" style="width: 50px; height: 55px; padding-top: 5.15px; padding-bottom: 6.88px; padding-left: 4.69px; padding-right: 4.69px; left: 56px; top: 25px; position: absolute; flex-direction: column; justify-content: center; align-items: center; display: inline-flex">
-          <div class="Vector" style="width: 40.62px; height: 42.97px; background: black"></div>
+    
+        <div class="item" id="item3">
+          <img src="https://images.unsplash.com/photo-1630623093145-f606591c2546?auto=format&fit=crop&q=80&w=1965&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1pYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+          <label class="label">Ginger</label>
+          <button class="decrease">-</button>
+          <input class="InputField" type="number" value="1" min="0" readonly>
+          <button class="increase">+</button>
         </div>
       </div>
     </div>
+
+    <script>
+      let isEditing = false;
+
+      // Get a reference to the button by its ID
+      const editButton = document.getElementById("editButton");
+      const decreaseButton = document.querySelectorAll('.decrease');
+      const increaseButton = document.querySelectorAll('.increase');
+
+      // Add a click event listener to the button
+      editButton.addEventListener("click", function() {
+        isEditing = !isEditing;
+
+        if(isEditing){
+          for (let i = 0; i < decreaseButton.length && i<increaseButton.length; i++) {
+            decreaseButton[i].style.display = "inline";
+            increaseButton[i].style.display = "inline";
+          }
+        } else{
+          for (let i = 0; i < decreaseButton.length && i<increaseButton.length; i++) {
+            decreaseButton[i].style.display = "none";
+            increaseButton[i].style.display = "none";
+          }
+        }
+
+      });
+    </script>
   </body>
 </html>
 

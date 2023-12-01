@@ -22,12 +22,12 @@
             <div id="fridgeSidenav" class="sidenav fridgeSidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('fridgeSidenav')">&times;</a>
                 <div class="fridgeSidenav-container">
-                    <h2>Add Items to Fridge</h2>
+                    <h2>Add Items to Inventory</h2>
                     
                     <div class="fridgeSidenav-itemsContainer">
                     </div>
 
-                    <button>Update Fridge</button>
+                    <button onclick="updateFridge()">Update Inventory</button>
                 </div>
             </div>
             <!-- FRIDGE ICON -->
@@ -86,6 +86,32 @@
         function openFridgeNav(){
             fridgenavOpen = true;
             document.getElementById("fridgeSidenav").style.width = "300px";
+        }
+
+        function closeFridgeNav(){
+            fridgenavOpen = false;
+            document.getElementById("fridgeSidenav").style.width = "0px";
+        }
+
+        // update the fridge
+        function updateFridge() {
+            // Check if list is empty
+            if (shoppingCart.length === 0) {
+                alert("Please choose an item to put into inventory!");
+            } else {
+                // Put the list into local storage
+                sessionStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
+
+                // Clear the list after updating local storage
+                shoppingCart.splice(0, shoppingCart.length);
+                // // Update
+                // generateShoppingCartItems();
+                alert("Inventory updated successfully!");
+                
+                window.location.href = "fridge.html";
+
+
+            }
         }
 
         function generateCategoriesAndItems() {
@@ -161,7 +187,7 @@
                     const itemName = document.createElement('p');
                     itemName.textContent = item.name;
                     const addButton = document.createElement('button');
-                    addButton.textContent = 'Add to Fridge';
+                    addButton.textContent = 'Add to Inventory';
 
                     // Add counter for each item
                     const counter = document.createElement('span');
@@ -245,6 +271,9 @@
                     item.quantity = Math.max(0, item.quantity - 1);
                     if (item.quantity ==0){
                         shoppingCart.splice(shoppingCart.indexOf(item), 1);
+                        if (shoppingCart.length === 0){
+                            closeFridgeNav();
+                        }
                         generateShoppingCartItems(); // Update the displayed items after removing item 
                     }
                     quantityInput.value = item.quantity;
@@ -283,6 +312,9 @@
                 // event listener for removing the item from the shopping cart
                 removeButton.addEventListener('click', function () {
                     shoppingCart.splice(shoppingCart.indexOf(item), 1);
+                    if (shoppingCart.length === 0){
+                        closeFridgeNav();
+                    }
                     generateShoppingCartItems(); // update
                 });
 

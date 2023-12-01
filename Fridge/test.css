@@ -112,6 +112,11 @@ header img {
     cursor: pointer;
 }
 
+.fridgeSidenav-container button:hover{
+    background: rgb(131, 98, 54);
+    color: white;
+}
+
 .fridgeSidenav-itemsContainer{
     display: flex;
     flex-direction: column;
@@ -164,10 +169,11 @@ header img {
 }
 
 .fridgeSidenav-incDec input{
+    text-align: center;
     width: 30px;
     height: 20px;
     color: white;
-    background: #d2b48c;
+    background: #8e785a;
     border: none;
 }
 
@@ -248,13 +254,18 @@ header img {
 }
 
 .itemFilter {
-    border: 1px black solid;
+    border: 1px #a47942 solid;
     background-color: wheat;
     text-align: center;
     width: 100px;
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.itemFilter:hover {
+    background-color: #a47942;
+    color: white;
 }
 
 .categoriesContainer{
@@ -328,6 +339,12 @@ header img {
 .textContainer button {
     padding: 5px 30px 5px 30px;
     border-radius: 10px;
-    background-color: #dcdcdc;
+    border: 1px #a47942 solid;
+    background-color: wheat;
     cursor: pointer;
+}
+
+.textContainer button:hover{
+    background-color: #a47942;
+    color: white;
 }

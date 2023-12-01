@@ -10,15 +10,15 @@
         <div>
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('mySidenav')">&times;</a>
-                <a href="#">Browse Recipes</a>
+                <a href="../browse Recipes/browse2.html">Browse Recipes</a>
                 <a href="inventory.html">Inventory</a>
-                <a href="#">Shop</a>
+                <a href="../Purchase ingredients/purch-part2.html">Shop</a>
                 <a href="../Login-Register-Profile/Profile.html">Profile</a>
             </div>
             <!-- three lines icons -->
             <span style="font-size:30px;cursor:pointer" onclick="toggleNav('mySidenav')">&#9776;</span>
         </div>
-        <h1>CookIT</h1>
+        <h1 onclick="document.location='../browse Recipes/browse2.html'">CookIT</h1>
         <div>
             <div id="fridgeSidenav" class="sidenav fridgeSidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('fridgeSidenav')">&times;</a>
@@ -75,6 +75,30 @@
                     items: [
                         { name: "Apple", image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGV8ZW58MHx8MHx8fDI%3D" },
                         { name: "Banana", image: "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFuYW5hfGVufDB8fDB8fHwy" },
+                        { name: "Strawberry", image: "https://www.thermofisher.com/blog/food/wp-content/uploads/sites/5/2015/08/single_strawberry__isolated_on_a_white_background.jpg" },
+                        { name: "Grapes", image: "https://images.everydayhealth.com/images/diet-nutrition/all-about-grapes-722x406.jpg" },
+                        { name: "Orange", image: "https://producemadesimple.ca/wp-content/uploads/2015/01/orange-web.jpg" },
+                        { name: "Mango", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Mangos_-_single_and_halved.jpg/640px-Mangos_-_single_and_halved.jpg" },
+                        { name: "Grapefruit", image: "https://extension.usu.edu/nutrition/images/Grapefruit12.png" },
+                        // Add more items if needed
+                    ]
+                },
+                {
+                    categoryName: "Spreads",
+                    items: [
+                        { name: "Barley Malt", image: "https://storage.googleapis.com/images-sof-prd-9fa6b8b.sof.prd.v8.commerce.mi9cloud.com/product-images/zoom/00024182493153.jpg" },
+                        { name: "Chocolate Spread", image: "https://chocolatecoveredkatie.com/wp-content/uploads/2021/12/How-To-Make-Nutella-Chocolate-Hazelnut-Spread-500x500.jpg" },
+                        { name: "Strawberry Jam", image: "https://www.thecountrycook.net/wp-content/uploads/2023/04/thumbnail-Homemade-Strawberry-Jam-scaled.jpg"},
+                        { name: "Honey", image: "https://d2jx2rerrg6sh3.cloudfront.net/images/news/ImageForNews_753423_16891547829825380.jpg"},
+                        // Add more items if needed
+                    ]
+                },
+                {
+                    categoryName: "Baking Products",
+                    items: [
+                        { name: "All Purpose Flour", image: "https://www.thespruceeats.com/thmb/MecIMVxLn74VSSn1KNcpcDiWqE4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/all_purpose_flour1_2-92747f05d2c7445d86fedae894c8c16e.jpg" },
+                        { name: "Yeast", image: "https://hips.hearstapps.com/hmg-prod/images/active-dry-baking-yeast-granules-in-wooden-spoon-royalty-free-image-1697143125.jpg"},
+                        { name: "Sugar", image: "https://i.cbc.ca/1.1894364.1380814651!/fileImage/httpImage/sugar.jpg"},
                         // Add more items if needed
                     ]
                 },
@@ -98,6 +122,11 @@
                         { name: "Yogurt", image: "https://images.unsplash.com/photo-1562114808-b4b33cf60f4f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8eW9ndXJ0fGVufDB8fDB8fHwy" },
                         { name: "Butter", image: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
                         { name: "Cheese", image: "https://images.unsplash.com/photo-1599791427176-0caab37538f3?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                        { name: "Mozzarella", image: "https://images.unsplash.com/photo-1633253037246-12bb11ff545a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
+                        { name: "Gorgonzolla", image: "https://images.unsplash.com/photo-1626957341926-98752fc2ba90?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
+                        { name: "Fontina", image: "https://www.tasteforluxury.ca/wp-content/uploads/2020/11/Fontina-a-fette-un-quarto-di-forma.jpg"},
+                        { name: "Grana Padano", image: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Grana_Padano_DOP.jpg"},
+                        { name: "Parmiggiano-Reggiano", image: "https://shoptoronto.eataly.ca/cdn/shop/products/parm1_05434b15-f0a2-484f-a841-cb21c5b21f43.png?v=1656604771"},
                         // Add more items if needed
                     ]
                 }
@@ -160,17 +189,14 @@
                 categoryList.unshift(selectedCategoryItem);
                 // Regenerate categories and items based on the updated categoryList
                 generateCategoriesAndItems();
-                // generateShoppingCartItems();
             }
         }
 
         function generateCategoriesAndItems() {
             const categoriesContainer = document.querySelector('.categoriesContainer');
 
-            // clear existing content in the container
             categoriesContainer.innerHTML = '';
 
-            // Loop through the list of categories
             categoryList.forEach(category => {
                 // main container for each category
                 const categoryContainer = document.createElement('div');
@@ -187,7 +213,6 @@
                 const itemsContainer = document.createElement('div');
                 itemsContainer.className = 'itemsContainer';
 
-                // Loop through the items in the category
                 category.items.forEach(item => {
                     // main container for each item
                     const itemContainer = document.createElement('div');
@@ -232,23 +257,18 @@
                         generateShoppingCartItems();
                     });
 
-                    // Append elements to the text container
                     textContainer.appendChild(itemName);
                     textContainer.appendChild(addButton);
 
-                    // Append image and text containers to the main item container
                     itemContainer.appendChild(imageContainer);
                     itemContainer.appendChild(textContainer);
 
-                    // Append the main item container to the items container
                     itemsContainer.appendChild(itemContainer);
                 });
 
-                // Append category name and items container to the main category container
                 categoryContainer.appendChild(categoryNameContainer);
                 categoryContainer.appendChild(itemsContainer);
 
-                // Append the main category container to the categories container
                 categoriesContainer.appendChild(categoryContainer);
             });
         }
@@ -257,12 +277,10 @@
         function generateShoppingCartItems() {
             const itemsContainer = document.querySelector('.fridgeSidenav-itemsContainer');
 
-            // clear existing content in the container
             itemsContainer.innerHTML = '';
 
-            // Loop through the items in the list
             shoppingCart.forEach(item => {
-                // main container for each item
+                // main container
                 const itemContainer = document.createElement('div');
                 itemContainer.className = 'fridgeSidenav-item';
 
@@ -283,11 +301,11 @@
                 const incDecContainer = document.createElement('div');
                 incDecContainer.className = 'fridgeSidenav-incDec';
 
-                // decrement button
+                // dec button
                 const decButton = document.createElement('div');
                 decButton.className = 'incDecButton dec';
                 decButton.textContent = '-';
-                // event listener for decrementing the quantity
+                // Dec quantity event
                 decButton.addEventListener('click', function () {
                     item.quantity = Math.max(0, item.quantity - 1);
                     if (item.quantity ==0){
@@ -307,22 +325,20 @@
                 quantityInput.min = '0';
                 quantityInput.readOnly = true;
 
-                // increment button
+                // inc button
                 const incButton = document.createElement('div');
                 incButton.className = 'incDecButton inc';
                 incButton.textContent = '+';
-                // event listener for incrementing the quantity
+                // inc event
                 incButton.addEventListener('click', function () {
                     item.quantity++;
                     quantityInput.value = item.quantity;
                 });
 
-                // Append elements to the incDec container
                 incDecContainer.appendChild(decButton);
                 incDecContainer.appendChild(quantityInput);
                 incDecContainer.appendChild(incButton);
 
-                // Append elements to the text container
                 textContainer.appendChild(itemName);
                 textContainer.appendChild(incDecContainer);
 
@@ -330,7 +346,7 @@
                 const removeButton = document.createElement('div');
                 removeButton.className = 'removeButton';
                 removeButton.textContent = 'Remove';
-                // event listener for removing the item from the shopping cart
+                // removing the item from the shopping cart event
                 removeButton.addEventListener('click', function () {
                     shoppingCart.splice(shoppingCart.indexOf(item), 1);
                     if (shoppingCart.length === 0){
@@ -339,12 +355,10 @@
                     generateShoppingCartItems(); // update
                 });
 
-                // Append elements to the main item container
                 itemContainer.appendChild(imageContainer);
                 itemContainer.appendChild(textContainer);
                 itemContainer.appendChild(removeButton);
 
-                // Append the main item container to the shopping cart container
                 itemsContainer.appendChild(itemContainer);
             });
         }

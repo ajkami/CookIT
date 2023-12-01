@@ -121,6 +121,11 @@ header {
     width: 200px;
     height: 210px;
     border-radius: 15px;
+    cursor: pointer;
+}
+
+.itemContainer:hover{
+    border: 5px burlywood solid;
 }
 
 .itemContainer h2{
@@ -166,6 +171,7 @@ header {
     color: white;
     width: 30px;
     font-size: 20px;
+    visibility: hidden;
 }
 
 .incDecButton:hover{

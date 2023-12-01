@@ -84,9 +84,6 @@
                 }
             });
 
-            // Log the inventory to the console (you can remove this line)
-            console.log('Inventory:', inventory);
-
             // Now, the "inventory" array is populated with items from the "shoppingCart"
             // You can use the "inventory" array as needed in your application
         }
@@ -124,6 +121,15 @@
             const decButton = document.createElement('div');
             decButton.className = 'incDecButton dec';
             decButton.textContent = '-';
+            // event listener for decrementing the quantity
+            decButton.addEventListener('click', function () {
+                item.quantity = Math.max(0, item.quantity - 1);
+                if (item.quantity ==0){
+                    inventory.splice(inventory.indexOf(item), 1);
+                    displayInventory(); // Update the displayed items after removing item 
+                }
+                inputElement.value = item.quantity;
+            });
             controlsContainer.appendChild(decButton);
 
             // Create the input element for quantity
@@ -138,13 +144,30 @@
             const incButton = document.createElement('div');
             incButton.className = 'incDecButton inc';
             incButton.textContent = '+';
+            // event listener for incrementing the quantity
+            incButton.addEventListener('click', function () {
+                item.quantity++;
+                inputElement.value = item.quantity;
+            });
             controlsContainer.appendChild(incButton);
 
             // Append the controls container to the main item container
             itemContainer.appendChild(controlsContainer);
 
+            // Add a click event listener to toggle the visibility of buttons
+            itemContainer.addEventListener('click', function () {
+                // Check if the click target is not one of the buttons
+                if (!event.target.classList.contains('incDecButton')) {
+                  decButton.style.visibility = decButton.style.visibility === 'visible' ? 'hidden' : 'visible';
+                  incButton.style.visibility = incButton.style.visibility === 'visible' ? 'hidden' : 'visible';
+                }
+            });
+
             // Append the main item container to the inventory container
             inventoryContainer.appendChild(itemContainer);
+
+            // Log the inventory to the console (you can remove this line)
+            console.log('Inventory:', inventory);
         });
     }
 

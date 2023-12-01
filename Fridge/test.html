@@ -25,44 +25,13 @@
                     <h2>Add Items to Fridge</h2>
                     
                     <div class="fridgeSidenav-itemsContainer">
-                        <div class="fridgeSidenav-item">
-                            <div class="fridgeSidenav-imageContainer">
-                                <img src="https://images.unsplash.com/photo-1609438824822-5b3a0e9abb4e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-                            </div>
-                            <div class="fridgeSidenav-textContainer">
-                                <p>Pretzel</p>
-                                <div class="fridgeSidenav-incDec">
-                                    <div class="incDecButton dec">-</div>
-                                    <input type="number" value="1" min="0" readonly>
-                                    <div class="incDecButton inc">+</div>
-                                </div>
-                            </div>
-                            <div class="removeButton">Remove</div>
-                        </div>
-
-                        <div class="fridgeSidenav-item">
-                            <div class="fridgeSidenav-imageContainer">
-                                <img src="https://images.unsplash.com/photo-1562945431-ce2b63d5a7fe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-                            </div>
-                            <div class="fridgeSidenav-textContainer">
-                                <p>Pretzel</p>
-                                <div class="fridgeSidenav-incDec">
-                                    <div class="incDecButton dec">-</div>
-                                    <input type="number" value="1" min="0" readonly>
-                                    <div class="incDecButton inc">+</div>
-                                </div>
-                            </div>
-                            <div class="removeButton">Remove</div>
-                        </div>
-
-                        <!-- ADD MORE IF NEEDED -->
                     </div>
 
                     <button>Update Fridge</button>
                 </div>
             </div>
             <!-- FRIDGE ICON -->
-            <img onclick="toggleNav('fridgeSidenav')" src="assets/fridgeIcon.png" />
+            <img style="cursor:pointer" onclick="toggleNav('fridgeSidenav')" src="assets/fridgeIcon.png" />
         </div>
     </header>
 </head>
@@ -98,6 +67,8 @@
     <script>
         let navOpen = false;
         let fridgenavOpen = false;
+        // Maintain a virtual shopping cart array
+        const shoppingCart = [];
 
         function toggleNav(sidenavId) {
             const isOpen = (sidenavId === "mySidenav") ? navOpen : fridgenavOpen;
@@ -110,6 +81,11 @@
             }
 
             document.getElementById(sidenavId).style.width = width;
+        }
+
+        function openFridgeNav(){
+            fridgenavOpen = true;
+            document.getElementById("fridgeSidenav").style.width = "300px";
         }
 
         function generateCategoriesAndItems() {
@@ -187,6 +163,28 @@
                     const addButton = document.createElement('button');
                     addButton.textContent = 'Add to Fridge';
 
+                    // Add counter for each item
+                    const counter = document.createElement('span');
+                    counter.textContent = '0';
+
+                    // Add event listener to the "Add to Fridge" button
+                    addButton.addEventListener('click', function() {
+                        openFridgeNav();
+                        // Find the item in the shopping cart
+                        const cartItem = shoppingCart.find(cartItem => cartItem.name === item.name);
+
+                        if (cartItem) {
+                            // If the item is already in the cart, increment the counter
+                            cartItem.quantity++;
+                            counter.textContent = cartItem.quantity;
+                        } else {
+                            // If the item is not in the cart, add it with quantity 1
+                            shoppingCart.push({ name: item.name, image: item.image, quantity: 1 });
+                            counter.textContent = '1';
+                        }
+                        generateShoppingCartItems();
+                    });
+
                     // Append elements to the text container
                     textContainer.appendChild(itemName);
                     textContainer.appendChild(addButton);
@@ -208,8 +206,99 @@
             });
         }
 
-        // Call function when page is loaded
-        window.onload = generateCategoriesAndItems;
+        // function for the fridge side bar, need better name :)
+        function generateShoppingCartItems() {
+            const itemsContainer = document.querySelector('.fridgeSidenav-itemsContainer');
+
+            // clear existing content in the container
+            itemsContainer.innerHTML = '';
+
+            // Loop through the items in the list
+            shoppingCart.forEach(item => {
+                // main container for each item
+                const itemContainer = document.createElement('div');
+                itemContainer.className = 'fridgeSidenav-item';
+
+                // image container
+                const imageContainer = document.createElement('div');
+                imageContainer.className = 'fridgeSidenav-imageContainer';
+                const image = document.createElement('img');
+                image.src = item.image;
+                imageContainer.appendChild(image);
+
+                // text container
+                const textContainer = document.createElement('div');
+                textContainer.className = 'fridgeSidenav-textContainer';
+                const itemName = document.createElement('p');
+                itemName.textContent = item.name;
+
+                // incDec container
+                const incDecContainer = document.createElement('div');
+                incDecContainer.className = 'fridgeSidenav-incDec';
+
+                // decrement button
+                const decButton = document.createElement('div');
+                decButton.className = 'incDecButton dec';
+                decButton.textContent = '-';
+                // event listener for decrementing the quantity
+                decButton.addEventListener('click', function () {
+                    item.quantity = Math.max(0, item.quantity - 1);
+                    if (item.quantity ==0){
+                        shoppingCart.splice(shoppingCart.indexOf(item), 1);
+                        generateShoppingCartItems(); // Update the displayed items after removing item 
+                    }
+                    quantityInput.value = item.quantity;
+                });
+
+                // the input for quantity
+                const quantityInput = document.createElement('input');
+                quantityInput.type = 'number';
+                quantityInput.value = item.quantity;
+                quantityInput.min = '0';
+                quantityInput.readOnly = true;
+
+                // increment button
+                const incButton = document.createElement('div');
+                incButton.className = 'incDecButton inc';
+                incButton.textContent = '+';
+                // event listener for incrementing the quantity
+                incButton.addEventListener('click', function () {
+                    item.quantity++;
+                    quantityInput.value = item.quantity;
+                });
+
+                // Append elements to the incDec container
+                incDecContainer.appendChild(decButton);
+                incDecContainer.appendChild(quantityInput);
+                incDecContainer.appendChild(incButton);
+
+                // Append elements to the text container
+                textContainer.appendChild(itemName);
+                textContainer.appendChild(incDecContainer);
+
+                // remove button
+                const removeButton = document.createElement('div');
+                removeButton.className = 'removeButton';
+                removeButton.textContent = 'Remove';
+                // event listener for removing the item from the shopping cart
+                removeButton.addEventListener('click', function () {
+                    shoppingCart.splice(shoppingCart.indexOf(item), 1);
+                    generateShoppingCartItems(); // update
+                });
+
+                // Append elements to the main item container
+                itemContainer.appendChild(imageContainer);
+                itemContainer.appendChild(textContainer);
+                itemContainer.appendChild(removeButton);
+
+                // Append the main item container to the shopping cart container
+                itemsContainer.appendChild(itemContainer);
+            });
+        }
+
+        window.onload = function () {
+            generateCategoriesAndItems();
+        };
     </script>
 
 </body>

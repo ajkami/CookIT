@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CookIT | My Inventory</title>
+  <link rel="stylesheet" href="inventoryStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <header>
+    <div>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('mySidenav')">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
+      <span style="font-size:30px;cursor:pointer" onclick="toggleNav('mySidenav')">&#9776;</span>
+    </div>
+    <h1>CookIT</h1>
+  </header>
+</head>
+
+<body>
+  <div class="app idk">
+    <div class="fridgeContainer idk">
+      <div class="fridge1 idk">
+        <div class="fridge2 idk">
+          <div class="itemsContainer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttonContainer">
+      <div class="button">
+        <span onclick="document.location='addToInv.html'" style="cursor:pointer">&#x2b;</span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let navOpen = false;
+    let fridgenavOpen = false;
+    const inventory = [
+        { name: "Apple", image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGV8ZW58MHx8MHx8fDI%3D", quantity: 10 },
+        { name: "Banana", image: "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFuYW5hfGVufDB8fDB8fHwy", quantity: 5},
+    ];
+
+    function toggleNav(sidenavId) {
+      const isOpen = navOpen;
+      const width = isOpen ? "0" : "300px";
+      navOpen = !navOpen;
+      document.getElementById(sidenavId).style.width = width;
+    }
+    // Function to load shoppingCart from sessionStorage and populate inventory
+    function loadInventory() {
+        // Retrieve shoppingCart from sessionStorage
+        const shoppingCartString = sessionStorage.getItem('shoppingCart');
+
+        // Check if shoppingCartString is not null or undefined
+        if (shoppingCartString) {
+            // Parse the JSON string to get the array
+            const shoppingCart = JSON.parse(shoppingCartString);
+
+                // Loop through items in shoppingCart
+                shoppingCart.forEach(cartItem => {
+                // Check if the item with the same name exists in the inventory
+                const inventoryItem = inventory.find(invItem => invItem.name === cartItem.name);
+
+                if (inventoryItem) {
+                    // If item with the same name exists, update its quantity
+                    inventoryItem.quantity += cartItem.quantity;
+                } else {
+                    // If no item with the same name is found, append it to the inventory
+                    inventory.push({
+                        name: cartItem.name,
+                        image: cartItem.image,
+                        quantity: cartItem.quantity
+                    });
+                }
+            });
+
+            // Log the inventory to the console (you can remove this line)
+            console.log('Inventory:', inventory);
+
+            // Now, the "inventory" array is populated with items from the "shoppingCart"
+            // You can use the "inventory" array as needed in your application
+        }
+    }
+
+    // Function to create DOM elements for each item in the inventory
+    function displayInventory() {
+        // Get the container where you want to display the inventory
+        const inventoryContainer = document.querySelector('.itemsContainer');
+
+        // Clear existing content in the container
+        inventoryContainer.innerHTML = '';
+
+        // Loop through the inventory and create DOM elements
+        inventory.forEach(item => {
+            // Create the main container for each item
+            const itemContainer = document.createElement('div');
+            itemContainer.className = 'itemContainer';
+
+            // Create the image element
+            const imgElement = document.createElement('img');
+            imgElement.src = item.image;
+            itemContainer.appendChild(imgElement);
+
+            // Create the heading element for the item name
+            const h2Element = document.createElement('h2');
+            h2Element.textContent = item.name;
+            itemContainer.appendChild(h2Element);
+
+            // Create the controls container
+            const controlsContainer = document.createElement('div');
+            controlsContainer.className = 'controls';
+
+            // Create the decrement button
+            const decButton = document.createElement('div');
+            decButton.className = 'incDecButton dec';
+            decButton.textContent = '-';
+            controlsContainer.appendChild(decButton);
+
+            // Create the input element for quantity
+            const inputElement = document.createElement('input');
+            inputElement.type = 'number';
+            inputElement.value = item.quantity;
+            inputElement.min = 0;
+            inputElement.readOnly = true;
+            controlsContainer.appendChild(inputElement);
+
+            // Create the increment button
+            const incButton = document.createElement('div');
+            incButton.className = 'incDecButton inc';
+            incButton.textContent = '+';
+            controlsContainer.appendChild(incButton);
+
+            // Append the controls container to the main item container
+            itemContainer.appendChild(controlsContainer);
+
+            // Append the main item container to the inventory container
+            inventoryContainer.appendChild(itemContainer);
+        });
+    }
+
+    // Call the function to load shoppingCart and populate inventory on page load
+    window.onload = function () {
+      loadInventory();
+      displayInventory();
+    };
+  </script>
+</body>
+
+</html>

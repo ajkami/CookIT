@@ -52,9 +52,9 @@
         <div class="browseContainer">
             <h3>Browse by Category</h3>
             <div class="filter">
-                <div class="itemFilter">Fruits</div>
-                <div class="itemFilter">Dairy</div>
-                <div class="itemFilter">Baked Goods</div>
+                <div class="itemFilter" onclick="sortCategory('Fruits')">Fruits</div>
+                <div class="itemFilter" onclick="sortCategory('Dairy Products')">Dairy</div>
+                <div class="itemFilter" onclick="sortCategory('Baked Goods')">Baked Goods</div>
             </div>
         </div>
 
@@ -67,8 +67,40 @@
     <script>
         let navOpen = false;
         let fridgenavOpen = false;
-        // Maintain a virtual shopping cart array
         const shoppingCart = [];
+        let categoryList = [
+                {
+                    categoryName: "Fruits",
+                    items: [
+                        { name: "Apple", image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGV8ZW58MHx8MHx8fDI%3D" },
+                        { name: "Banana", image: "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFuYW5hfGVufDB8fDB8fHwy" },
+                        // Add more items if needed
+                    ]
+                },
+                {
+                    categoryName: "Baked Goods",
+                    items: [
+                        { name: "Pretzel", image: "https://images.unsplash.com/photo-1609438824822-5b3a0e9abb4e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                        { name: "Croissant", image: "https://images.unsplash.com/photo-1587912001191-0cd4f14fd89e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                        { name: "Donut", image: "https://images.unsplash.com/photo-1562945431-ce2b63d5a7fe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
+                        { name: "Naan", image: "https://images.unsplash.com/photo-1678527033550-33b09e4ef268?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
+                        { name: "Brownie", image: "https://images.unsplash.com/photo-1636743715220-d8f8dd900b87?q=80&w=1885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
+                        { name: "Cookie", image: "https://images.unsplash.com/photo-1607114910421-a7c2b982d497?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
+                        { name: "Pie", image: "https://images.unsplash.com/photo-1572383672419-ab35444a6934?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGllfGVufDB8fDB8fHwy"},
+                        // Add more items if needed
+                    ]
+                },
+                {
+                    categoryName: "Dairy Products",
+                    items: [
+                        { name: "Milk", image: "https://images.unsplash.com/photo-1596151163116-98a5033814c2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                        { name: "Yogurt", image: "https://images.unsplash.com/photo-1562114808-b4b33cf60f4f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8eW9ndXJ0fGVufDB8fDB8fHwy" },
+                        { name: "Butter", image: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                        { name: "Cheese", image: "https://images.unsplash.com/photo-1599791427176-0caab37538f3?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
+                        // Add more items if needed
+                    ]
+                }
+            ];
 
         function toggleNav(sidenavId) {
             const isOpen = (sidenavId === "mySidenav") ? navOpen : fridgenavOpen;
@@ -114,42 +146,28 @@
             }
         }
 
-        function generateCategoriesAndItems() {
-            const categoryList = [
-                {
-                    categoryName: "Fruits",
-                    items: [
-                        { name: "Apple", image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGV8ZW58MHx8MHx8fDI%3D" },
-                        { name: "Banana", image: "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFuYW5hfGVufDB8fDB8fHwy" },
-                        // Add more items if needed
-                    ]
-                },
-                {
-                    categoryName: "Baked Goods",
-                    items: [
-                        { name: "Pretzel", image: "https://images.unsplash.com/photo-1609438824822-5b3a0e9abb4e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-                        { name: "Croissant", image: "https://images.unsplash.com/photo-1587912001191-0cd4f14fd89e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-                        { name: "Donut", image: "https://images.unsplash.com/photo-1562945431-ce2b63d5a7fe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-                        { name: "Naan", image: "https://images.unsplash.com/photo-1678527033550-33b09e4ef268?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-                        { name: "Brownie", image: "https://images.unsplash.com/photo-1636743715220-d8f8dd900b87?q=80&w=1885&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-                        { name: "Cookie", image: "https://images.unsplash.com/photo-1607114910421-a7c2b982d497?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-                        { name: "Pie", image: "https://images.unsplash.com/photo-1572383672419-ab35444a6934?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cGllfGVufDB8fDB8fHwy"},
-                        // Add more items if needed
-                    ]
-                },
-                {
-                    categoryName: "Dairy Products",
-                    items: [
-                        { name: "Milk", image: "https://images.unsplash.com/photo-1596151163116-98a5033814c2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-                        { name: "Yogurt", image: "https://images.unsplash.com/photo-1562114808-b4b33cf60f4f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8eW9ndXJ0fGVufDB8fDB8fHwy" },
-                        { name: "Butter", image: "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-                        { name: "Cheese", image: "https://images.unsplash.com/photo-1599791427176-0caab37538f3?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-                        // Add more items if needed
-                    ]
-                }
-            ];
+        // Function to sort the categoryList based on the selected category
+        function sortCategory(selectedCategory) {
+            // Find the index of the selected category in the categoryList
+            const selectedIndex = categoryList.findIndex(category => category.categoryName === selectedCategory);
+            // If the selected category is found
+            if (selectedIndex !== -1) {
+                // Move the selected category to the beginning of the categoryList
+                // splice returns a list, in this case a list of just 1 element, use the [0] to access that
+                const selectedCategoryItem = categoryList.splice(selectedIndex, 1)[0];
+                // unshift puts argument to the front of the list
+                categoryList.unshift(selectedCategoryItem);
+                // Regenerate categories and items based on the updated categoryList
+                generateCategoriesAndItems();
+                // generateShoppingCartItems();
+            }
+        }
 
+        function generateCategoriesAndItems() {
             const categoriesContainer = document.querySelector('.categoriesContainer');
+
+            // clear existing content in the container
+            categoriesContainer.innerHTML = '';
 
             // Loop through the list of categories
             categoryList.forEach(category => {
@@ -197,6 +215,8 @@
                     addButton.addEventListener('click', function() {
                         openFridgeNav();
                         // Find the item in the shopping cart
+                        // for cartItem in shoppingCart
+                        // if cartItem.name === item.name, then its found, then assign the item to cartItem
                         const cartItem = shoppingCart.find(cartItem => cartItem.name === item.name);
 
                         if (cartItem) {

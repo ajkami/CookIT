@@ -14,9 +14,9 @@
               </label>
               <aside class="sidebar">
                 <nav>
-                  <div>My Fridge</div>
-                  <div>My Favorites</div>
-                  <div>My Shopping List</div>
+                  <div><a href="/Fridge/fridge.html">My Fridge</a></div>
+                  <div><a href="/Login-Register-Profile/Profile.html">My Favorites</a></div>
+                  <div><a href="/Purchase ingredients/purchase.html">My Shopping List</a></div>
 
                 </nav>
               </aside>
@@ -29,8 +29,9 @@
                 </div>
                 <div class="filter-buttons">
                     <button class="time-filter" onclick="openPopup()">Time</button>
-                    <button class="type-filter">Type</button>
+                    <button class="type-filter">Cuisine</button>
                     <button class="ingredients-filter">Ingredients</button>
+                    <button class="Nutrition-filter">Nutritional Value</button>
                 </div>
             </div>
             </div>
@@ -52,7 +53,10 @@
                 <p>CookIT is a powerful cooking application browsing page that allows users to easily search for their favorite recipes, filter recipes based on various criteria, and discover new and exciting dishes. Whether you're a seasoned chef or just starting out in the kitchen, CookIT is your go-to resource for bringing mouthwatering recipes to life.</p>
 
             </div>
-        
+            <div class="text-sub">
+                <h2>Recommended Recipes (Click for more information)</h2>
+            </div>
+
             <div class="recipe-container">
                 <!-- Sample Recipe -->
                 <div class="recipe" onclick="showRecipeDetails(this)" ondblclick="toggleSidebar()">

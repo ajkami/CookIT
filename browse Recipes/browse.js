@@ -30,9 +30,10 @@ function showRecipeDetails(recipe) {
     sidebar.innerHTML = `
       <img src="./img/fp-fp-2149056043.jpg" style=" width: 100%; height: 30%; object-fit: cover;"></img>
       <h2 style="margin-left:2%;">${recipe.querySelector('.recipe-details h2').textContent}</h2>
+      <p style="margin-left:2%; font-size: 18px;">Savor the delight of our Crispy Chicken Parmesan – a golden symphony of tender chicken, breadcrumbs, and savory marinara sauce. Expertly pan-fried to perfection, each cutlet is crowned with a melty blend of mozzarella and Parmesan cheeses. Serve over spaghetti or in a warm Italian roll for an instant classic that's both comforting and crave-worthy. Elevate your weeknight dinner with this quick and delicious recipe!</p>
       <p style="margin-left:2%;">${recipe.querySelector('.recipe-details p').textContent}</p>
-      <div class="rating" style="margin-left:2%;">${recipe.querySelector('.rating').innerHTML}(7.4k)</div>
-      <button style=" position:absolute; top:50%;   -webkit-border-radius: 60;
+      <div class="rating" style="margin-left:2%; margin-right:10%">${recipe.querySelector('.rating').innerHTML}(7.4k)</div>
+      <button style=" position:absolute; top:60%;   -webkit-border-radius: 60;
       -moz-border-radius: 60;
       border-radius: 60px;
       font-family: Georgia;
@@ -40,7 +41,7 @@ function showRecipeDetails(recipe) {
       font-size: 40px;
       background: #D2B48C;
       padding: 10px 20px 10px 20px;
-      text-decoration: none;">View Recipe</button>
+      text-decoration: none; style="padding-top: 65%;">View Recipe</button>
       <!-- Add more details or content as needed -->
     `;
     sidebar.classList.add('active'); // Show the sidebar by adding 'active' class

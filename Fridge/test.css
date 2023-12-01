@@ -254,6 +254,10 @@ header img {
     cursor: pointer;
 }
 
+.categoriesContainer{
+    padding: 0 10px 0 10px;
+}
+
 .category {
     background-color: #b19e91;
     border-radius: 10px;

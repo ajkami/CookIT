@@ -842,12 +842,11 @@ function confirmOrder() {
         quantity: item.quantity,
       };
     });
-
     sessionStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
     sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
 
     // Redirect happens after the timeout now
-    window.location.href = "nextpage.html";
+    window.location.href = "../Fridge/inventory.html";
   }, 3000);
 }
 

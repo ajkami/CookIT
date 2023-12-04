@@ -10,20 +10,19 @@
   </head>
   <body>
         <header>
-                        <div class="container">
+            <div class="container">
                 <div class="container-content">
-                <h1 class="title">CookIt</h1>
-                <div class="search-container">
-                    <input type="text" id="search" name="search" placeholder="Search recipes...">
-                    <button type="submit">Search</button>
+                    <h1 class="title">CookIt</h1>
+                    <div class="search-container">
+                        <input type="text" id="searchbar" onkeyup="search_recipe()" name="search" placeholder="Search recipes...">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="time-filter" onclick="openPopup()">Time</button>
+                        <button class="type-filter">Cuisine</button>
+                        <button class="ingredients-filter">Ingredients</button>
+                        <button class="Nutrition-filter">Nutritional Value</button>
+                    </div>
                 </div>
-                <div class="filter-buttons">
-                    <button class="time-filter" onclick="openPopup()">Time</button>
-                    <button class="type-filter">Cuisine</button>
-                    <button class="ingredients-filter">Ingredients</button>
-                    <button class="Nutrition-filter">Nutritional Value</button>
-                </div>
-            </div>
             </div>
             <label class="hamburger-menu">
                 <input type="checkbox" />
@@ -40,10 +39,10 @@
                 <div class="popup-content">
                     <span class="close" onclick="closePopup()">&times;</span>
                     <ul>
-                        <li><button class="time-options">< 5 minutes</button></li>
-                        <li><button class="time-options">< 10 minutes</button></li>
-                        <li><button class="time-options">< 15 minutes</button></li>
-                        <li><button class="time-options">< 20 minutes</button></li>
+                        <li><button class="time-options" data-filter="1hr" onclick="filterSelection(event)">< 1 hr</button></li>
+                        <li><button class="time-options" data-filter="2hr" onclick="filterSelection(event)">< 2 hrs</button></li>
+                        <li><button class="time-options" data-filter="3hr" onclick="filterSelection(event)">< 3 hrs</button></li>
+                        <li><button class="time-options" data-filter="4hr" onclick="filterSelection(event)">< 4 hrs</button></li>
                     </ul>
                 </div>
             </div>
@@ -60,7 +59,7 @@
 
             <div class="recipe-container">
                 <!-- Sample Recipe -->
-                <div class="recipe" onclick="showRecipeDetails(this); toggleSidebar()">
+                <div class="recipe 1hr 2hr 3hr 4hr" onclick="showRecipeDetails(this); toggleSidebar()">
                     <img class = "recipe-img" src="./img/fp-fp-2149056043.jpg" alt="Recipe Image">
                     <div class="recipe-details">
                         <h2>Chicken Parm</h2>
@@ -72,7 +71,7 @@
                 </div>
                 <div class="recipe-sidebar" id="recipeSidebar">
                 </div>
-                <div class="recipe" onclick="showRecipeDetails2(this); toggleSidebar()">
+                <div class="recipe 1hr 2hr 3hr 4hr" onclick="showRecipeDetails2(this); toggleSidebar()">
                     <img src="./img/loaded-burgers-featured.jpg" alt="Recipe Image">
                     <div class="recipe-details">
                         <h2>Cheeseburger</h2>
@@ -82,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="recipe" onclick="showRecipeDetails3(this); toggleSidebar()">
+                <div class="recipe 2hr 3hr 4hr" onclick="showRecipeDetails3(this); toggleSidebar()">
                     <img src="./img/FINAL-lobster-ravioli-1-1200x1800.jpg" alt="Recipe Image">
                     <div class="recipe-details">
                         <h2>Lobster Ravioli</h2>
@@ -92,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="recipe" onclick="showRecipeDetails4(this); toggleSidebar()">
+                <div class="recipe 3hr 4hr" onclick="showRecipeDetails4(this); toggleSidebar()">
                     <img src="./img/cheese-pizza.jpg" alt="Recipe Image">
                     <div class="recipe-details">
                         <h2>Classic Cheese Pizza</h2>
@@ -102,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="recipe" onclick="showRecipeDetails5(this); toggleSidebar()">
+                <div class="recipe 4hr" onclick="showRecipeDetails5(this); toggleSidebar()">
                     <img src="./img/Lasagna.jpg" alt="Recipe Image">
                     <div class="recipe-details">
                         <h2>Cottage Cheese Lasagna</h2>
@@ -112,7 +111,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="recipe" onclick="showRecipeDetails6(this); toggleSidebar()">
+                <div class="recipe 3hr 4hr" onclick="showRecipeDetails6(this); toggleSidebar()">
                     <img src="./img/mongolian-beef-5-650x852.jpg" alt="Recipe Image">
                     <div class="recipe-details">
                         <h2>Mongolian beef</h2>

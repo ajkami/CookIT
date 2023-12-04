@@ -1,3 +1,4 @@
+
 function openPopup() {
       document.getElementById("myPopup").style.display = "block";
   }
@@ -191,42 +192,40 @@ function openPopup() {
       sidebar.classList.add('active'); // Show the sidebar by adding 'active' class
     }
   
-  
-  
-   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
   const recipes = document.querySelectorAll('.recipe');
   
   recipes.forEach(recipe => {
       recipe.addEventListener('click', toggleSidebar);
   });
-    
+
+  function search_recipe() {
+      let input = document.getElementById('searchbar').value
+      input=input.toLowerCase();
+      let x = document.getElementsByClassName('recipe');
+
+      for (i = 0; i < x.length; i++) {  
+            if (!x[i].innerHTML.toLowerCase().includes(input)) { 
+                x[i].style.display="none"; 
+            } 
+            else { 
+                x[i].style.display="list-item";                  
+            } 
+        } 
+  }
+
+  function filterSelection(e) {
+      const recipes = document.querySelectorAll('.recipe');
+      let filter = e.target.dataset.filter;
+      recipes.forEach(recipe => {
+            recipe.classList.contains(filter)
+            ? recipe.classList.remove('hidden')
+            : recipe.classList.add('hidden');
+      });
+
+  };
+
+  function closeTimeOptions() {
+      document.getElementById("myPopup").style.display = "none";
+  }

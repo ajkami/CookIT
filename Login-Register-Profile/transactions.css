@@ -1,3 +1,9 @@
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  background-color: #e70000; /* Replace with your desired color code */
+}
+
 .u-section-1 .u-sheet-1 {
   min-height: 552px;
 }

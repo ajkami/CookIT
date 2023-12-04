@@ -23,7 +23,7 @@ body {
     --tan-color-400: #a17b4a;
   }
   header {
-    background-color: var(--tan-color);
+    background-color: antiquewhite;
   
     padding: 2rem 1rem;
     align-items: center;
@@ -589,7 +589,7 @@ body {
     font-size: 2rem;
   }
   .hero-wrapper {
-    background-color: var(--tan-color);
+    background-color: antiquewhite;
     padding: 2rem 1rem;
   }
   .hero-container {
@@ -715,7 +715,7 @@ body {
   }
   
   .category-section {
-    background-color: var(--tan-color);
+    background-color: antiquewhite;
     text-align: center;
     padding: 20px;
   }
@@ -994,7 +994,7 @@ body {
     height: 27rem;
     /* background-color: red; */
   
-    background-color: var(--tan-color);
+    background-color: antiquewhite;
   }
   
   #previously-bought-wrapper h3 {

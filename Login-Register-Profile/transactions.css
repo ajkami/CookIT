@@ -1,7 +1,9 @@
 body {
-  font-family: "Lato", sans-serif;
   margin: 0;
-  background-color: #e70000; /* Replace with your desired color code */
+}
+
+.u-body {
+  background-color: antiquewhite; /* Replace with your desired color code */
 }
 
 .u-section-1 .u-sheet-1 {
@@ -155,10 +157,12 @@ body {
 }
 
 footer {
-  background-color: var(--tan-color-400);
+  background-color: burlywood;
   color: white;
   text-align: center;
   padding: 20px 0;
+  font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+  Verdana, sans-serif;
 }
 
 .footer-content {
@@ -176,6 +180,7 @@ footer {
 
 .footer-content h3 {
   margin-top: 0;
+  
 }
 
 .footer-content ul {
@@ -186,6 +191,7 @@ footer {
 .footer-content ul li a {
   color: white;
   text-decoration: none;
+  
 }
 
 .footer-content ul li a:hover {

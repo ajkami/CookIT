@@ -889,7 +889,42 @@ function showPreviouslyBought() {
   container.style.display = "flex";
 }
 
+
+function updateConfirmButtonState() {
+    var cardNumber = document.getElementById("cardNumber").value;
+    var expiryDate = document.getElementById("expiryDate").value;
+    var cvv = document.getElementById("cvv").value;
+    var preferredDate = document.getElementById("preferred-date").value;
+    var preferredTime = document.getElementById("preferred-time").value;
+    var confirmButton = document.getElementById("confirm-order-button");
+  
+    var isFormComplete =
+      cardNumber !== "" &&
+      expiryDate !== "" &&
+      cvv !== "" &&
+      preferredDate !== "" &&
+      preferredTime !== "";
+    confirmButton.disabled = !isFormComplete;
+  }
+  
+  function autofillSavedCard() {
+    document.getElementById("cardNumber").value = "1234 5678 9237 2289";
+    document.getElementById("cardName").value = "Ben Garber";
+    document.getElementById("expiryDate").value = "09/27";
+    document.getElementById("cvv").value = "457";
+    updateConfirmButtonState(); // Update the state of the confirm button
+  }
+  
+  document.getElementById("saved-card-button").addEventListener("click", function () {
+    autofillSavedCard();
+  });
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   // Your JavaScript code here
   // For example, code to toggle the sidebar
 });
+
+

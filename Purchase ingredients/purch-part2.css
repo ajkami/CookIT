@@ -6,6 +6,7 @@ body {
 body.no-scroll {
   overflow: hidden;
 }
+<<<<<<< HEAD
 .card-btns{
     display: flex;
     gap: 1rem;
@@ -20,6 +21,8 @@ body.no-scroll {
     background-color: rgb(24, 24, 24)!important;
 }
 
+=======
+>>>>>>> 25c574a41826e97d09a736d847b19e94a523834a
 
 :root {
   --bar-width: 60px;
@@ -130,6 +133,7 @@ header {
 #cancel-checkout:hover {
   background-color: #d03429;
 }
+
 #check-mark-container {
     position: absolute;
     top: 0;
@@ -204,6 +208,7 @@ header {
       box-shadow: inset 0px 0px 0px 30px #7ac142;
     }
   }
+
 #location-popup {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.294);
@@ -1002,6 +1007,7 @@ header {
 .form-group.half-width:last-child {
   padding-right: 0;
 }
+<<<<<<< HEAD
 #payment-form{
     display: flex;
     flex-direction: column;
@@ -1010,6 +1016,9 @@ header {
     display: flex;
     flex-direction: row;
 }
+=======
+
+>>>>>>> 25c574a41826e97d09a736d847b19e94a523834a
 #payment-form button {
   display: block;
   width: 100%;

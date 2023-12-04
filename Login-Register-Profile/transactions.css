@@ -1,5 +1,4 @@
 body {
-  font-family: "Lato", sans-serif;
   margin: 0;
 }
 
@@ -162,7 +161,8 @@ footer {
   color: white;
   text-align: center;
   padding: 20px 0;
-  font: ;
+  font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+  Verdana, sans-serif;
 }
 
 .footer-content {
@@ -180,6 +180,7 @@ footer {
 
 .footer-content h3 {
   margin-top: 0;
+  
 }
 
 .footer-content ul {
@@ -190,6 +191,7 @@ footer {
 .footer-content ul li a {
   color: white;
   text-decoration: none;
+  
 }
 
 .footer-content ul li a:hover {

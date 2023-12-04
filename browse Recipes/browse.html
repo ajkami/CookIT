@@ -10,6 +10,21 @@
   </head>
   <body>
         <header>
+                        <div class="container">
+                <div class="container-content">
+                <h1 class="title">CookIt</h1>
+                <div class="search-container">
+                    <input type="text" id="search" name="search" placeholder="Search recipes...">
+                    <button type="submit">Search</button>
+                </div>
+                <div class="filter-buttons">
+                    <button class="time-filter" onclick="openPopup()">Time</button>
+                    <button class="type-filter">Cuisine</button>
+                    <button class="ingredients-filter">Ingredients</button>
+                    <button class="Nutrition-filter">Nutritional Value</button>
+                </div>
+            </div>
+            </div>
             <label class="hamburger-menu">
                 <input type="checkbox" />
               </label>
@@ -21,24 +36,9 @@
 
                 </nav>
               </aside>
-            <div class="container">
-                <div class="container-content">
-                <h1 class="title">CookIt</h1>
-                <div class="search-container">
-                    <input type="text" id="search" name="search" placeholder="Search recipes...">
-                    <button type="submit">Search</button>
-                </div>
-                <div class="filter-buttons">
-                    <button class="time-filter" onclick="openTimePopup()">Time</button>
-                    <button class="type-filter" onclick="openTimePopup()">Cuisine</button>
-                    <button class="ingredients-filter">Ingredients</button>
-                    <button class="Nutrition-filter">Nutritional Value</button>
-                </div>
-            </div>
-            </div>
-            <div class="popup" id="timePopup">
-                <div class="popup-content" id="popup">
-                    <span class="close" onclick="closeTimePopup()">&times;</span>
+            <div class="popup" id="myPopup">
+                <div class="popup-content">
+                    <span class="close" onclick="closePopup()">&times;</span>
                     <ul>
                         <li><button class="time-options">< 5 minutes</button></li>
                         <li><button class="time-options">< 10 minutes</button></li>
@@ -58,7 +58,7 @@
                 <h2>Recommended Recipes (Click for more information)</h2>
             </div>
 
-            <div class="recipe-container" id="recipeContainer">
+            <div class="recipe-container">
                 <!-- Sample Recipe -->
                 <div class="recipe" onclick="showRecipeDetails(this); toggleSidebar()">
                     <img class = "recipe-img" src="./img/fp-fp-2149056043.jpg" alt="Recipe Image">

@@ -6,6 +6,11 @@ body {
   background-color: antiquewhite; /* Replace with your desired color code */
 }
 
+.u-container-layout {
+  background-color: rgb(253, 247, 238); /* Replace with your desired color code */
+
+}
+
 .u-section-1 .u-sheet-1 {
   min-height: 552px;
 }

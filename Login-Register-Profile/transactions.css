@@ -1,7 +1,10 @@
 body {
   font-family: "Lato", sans-serif;
   margin: 0;
-  background-color: #e70000; /* Replace with your desired color code */
+}
+
+.u-body {
+  background-color: antiquewhite; /* Replace with your desired color code */
 }
 
 .u-section-1 .u-sheet-1 {
@@ -155,10 +158,11 @@ body {
 }
 
 footer {
-  background-color: var(--tan-color-400);
+  background-color: burlywood;
   color: white;
   text-align: center;
   padding: 20px 0;
+  font: ;
 }
 
 .footer-content {

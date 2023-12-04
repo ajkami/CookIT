@@ -28,6 +28,10 @@ a:visited{
   --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
+.closebtn{
+  position: absolute;
+}
+
 .hamburger-menu {
   --x-width: calc(var(--hamburger-height) * 1.41421356237);
   display: flex;

@@ -22,15 +22,23 @@ View Individual Recipies:
 
 Shop for Ingredients:
 
-View Fridge:
+View Inventory:
+- User can see items they have
+- User can edit quantity of the items
+- User can remove any item from the inventory
+- User can add item to the inventory
 
-Add Ingredients to Fridge:
-
+Add Ingredients to Inventory:
+- User can add multiple items to the inventory at once
+- User can remove items they dont want to add to inventory anymore
+- User can edit quantity of the item to be added
+- User can search for an item they want to add
+- User can filter item display by their category
 
 Features not implemented:
 - Protected routing (all pages are accessible regardless of Login State, no cookie history)
 - No backend for users (no usernames/passwords stored), states removed after exit
 - No syncronization between orders and order history (no database to support this)
 - Profile details (credit card, name, address, etc.) not stored
-- No backend to support fridge state (removed after exit)
+- No backend to support inventory state (removed after exit)
 - No terms of service 

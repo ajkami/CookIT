@@ -828,27 +828,30 @@ document
     };
     sessionStorage.setItem("cardDetails", cardDetails);
   });
-
-function confirmOrder() {
-  document.getElementById("loading-screen-truck").style.display = "grid";
-
-  setTimeout(() => {
-    document.getElementById("loading-screen-truck").style.display = "none";
-
-    const shoppingCart = cartItems.map((item) => {
-      return {
-        name: item.name,
-        image: item.image,
-        quantity: item.quantity,
-      };
-    });
-    sessionStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
-    sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
-
-    // Redirect happens after the timeout now
-    window.location.href = "../Fridge/inventory.html";
-  }, 3000);
-}
+  function confirmOrder() {
+    document.getElementById("loading-screen-truck").style.display = "grid";
+  
+    setTimeout(() => {
+      document.getElementById("loading-screen-truck").style.display = "none";
+  
+      const shoppingCart = cartItems.map((item) => {
+        return {
+          name: item.name,
+          image: item.image,
+          quantity: item.quantity,
+        };
+      });
+  
+      sessionStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+      sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
+      document.getElementById("check-mark-container").style.display = "grid";
+      setTimeout(() => {
+        document.getElementById("check-mark-container").style.display = "none";
+        window.location.href = "../Fridge/inventory.html";
+      }, 3000);
+      // Redirect happens after the timeout now
+    }, 3000);
+  }
 
 function showPreviouslyBought() {
   // Update the category title

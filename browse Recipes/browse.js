@@ -79,7 +79,7 @@ function openPopup() {
         Savor the classic perfection of our cheeseburger, a culinary masterpiece that tantalizes your taste buds with every bite. Nestled between soft, golden brioche buns, our juicy, flame-grilled beef patty is a symphony of flavor and texture. Melted slices of premium cheddar cheese embrace the meat, adding a creamy richness that complements the savory notes. Crisp lettuce, ripe tomatoes, and zesty pickles provide a refreshing crunch, while our secret sauce delivers a harmonious blend of tanginess and creaminess</p>
         <p style="margin-left:2%;">${recipe.querySelector('.recipe-details p').textContent}</p>
         <div class="rating" style="margin-left:2%; margin-right:10%">${recipe.querySelector('.rating').innerHTML}(7.4k)</div>
-        <button style="   position:relative; bottom:0; left: 25%; transform: translateX(-50%); cursor: pointer;   -webkit-border-radius: 60;
+        <button onclick = "window.location.href='../View Recipe Steps/view-burger.html';" style="   position:relative; bottom:0; left: 25%; transform: translateX(-50%); cursor: pointer;   -webkit-border-radius: 60;
         -moz-border-radius: 60;
         border-radius: 60px;
         font-family: Georgia;
@@ -105,7 +105,7 @@ function openPopup() {
         <p style="margin-left:2%; font-size: 18px;">Indulge in the exquisite luxury of our lobster ravioli, a culinary creation that elevates the art of pasta. Each delicate parcel boasts a luscious filling of succulent lobster meat, delicately seasoned to enhance its natural sweetness. Enveloped in tender, handcrafted pasta, the ravioli offers a perfect balance of richness and elegance. Drizzled with a velvety, buttery sauce infused with hints of garlic and fresh herbs, every bite is a symphony of flavors that transports you to a gourmet seafood paradise. Immerse yourself in a dining experience that celebrates the refined essence of lobster in a delectable pasta masterpiece.</p>
         <p style="margin-left:2%;">${recipe.querySelector('.recipe-details p').textContent}</p>
         <div class="rating" style="margin-left:2%; margin-right:10%">${recipe.querySelector('.rating').innerHTML}(8.7k)</div>
-        <button style="  position:relative; bottom:0; left: 25%; transform: translateX(-50%); cursor: pointer;   -webkit-border-radius: 60;
+        <button onclick = "window.location.href='../View Recipe Steps/view-lobster.html';" style="  position:relative; bottom:0; left: 25%; transform: translateX(-50%); cursor: pointer;   -webkit-border-radius: 60;
         -moz-border-radius: 60;
         border-radius: 60px;
         font-family: Georgia;
@@ -132,7 +132,7 @@ function openPopup() {
         Experience the timeless delight of our Classic Cheese Pizza—a culinary masterpiece that celebrates simplicity and flavor. Picture a golden, thin crust, perfectly crisp at the edges and delightfully chewy at its center. Generously adorned with a blend of premium mozzarella and tangy tomato sauce, each slice is a canvas of pure, unadulterated pizza perfection. The molten cheese bubbles and melts into a gooey, savory layer that complements the sweet acidity of the tomatoes. This pizza is a nostalgic journey back to the fundamentals, where the harmony of cheese and sauce creates a symphony of taste that satisfies cravings and leaves you wanting more. It's a true celebration of the timeless charm of a classic cheese pizza.</p>
         <p style="margin-left:2%;">${recipe.querySelector('.recipe-details p').textContent}</p>
         <div class="rating" style="margin-left:2%; margin-right:10%">${recipe.querySelector('.rating').innerHTML}(4.8k)</div>
-        <button style="  position:relative; bottom:0; left: 25%; transform: translateX(-50%); cursor: pointer;   -webkit-border-radius: 60;
+        <button onclick = "window.location.href='../View Recipe Steps/view-pizza.html';" style="  position:relative; bottom:0; left: 25%; transform: translateX(-50%); cursor: pointer;   -webkit-border-radius: 60;
         -moz-border-radius: 60;
         border-radius: 60px;
         font-family: Georgia;
@@ -186,7 +186,7 @@ function openPopup() {
         Savor the bold and savory allure of our Mongolian Beef, a culinary journey that takes your taste buds to new heights. Tender strips of succulent beef are wok-seared to perfection, creating a perfect balance of crispy edges and melt-in-your-mouth tenderness. The star of the show is the irresistibly flavorful Mongolian sauce—rich, slightly sweet, and infused with a medley of aromatic spices. As the beef mingles with green onions and sesame seeds, each bite is a tantalizing symphony of savory umami and subtle sweetness. Immerse yourself in the culinary magic of Mongolian Beef, where the artful blend of ingredients creates a dish that's both satisfyingly hearty and delightfully nuanced.</p>
         <p style="margin-left:2%;">${recipe.querySelector('.recipe-details p').textContent}</p>
         <div class="rating" style="margin-left:2%; margin-right:10%">${recipe.querySelector('.rating').innerHTML}(7.6k)</div>
-        <button style=" position:relative; bottom:0; left: 25%; transform: translateX(-50%); cursor: pointer; -webkit-border-radius: 60;
+        <button onclick = "window.location.href='../View Recipe Steps/view-mongolian.html';" style=" position:relative; bottom:0; left: 25%; transform: translateX(-50%); cursor: pointer; -webkit-border-radius: 60;
         -moz-border-radius: 60;
         border-radius: 60px;
         font-family: Georgia;

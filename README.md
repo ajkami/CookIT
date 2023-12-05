@@ -55,5 +55,5 @@ Features not implemented:
 - Profile details (credit card, name, address, etc.) not stored
 - No backend to support inventory state (removed after exit)
 - No terms of service
-- No backend to support nutrient retreival for recipes
+- No backend to support nutrient filtering for recipes
 - No reviews viewable on recipes due to lack of backend

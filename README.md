@@ -17,6 +17,14 @@ View Transactions:
 - User can view support information for order corrections and or cancellations.
 
 Browse Recipes:
+- User can search for recipes to cook
+- User can filter recipes based off of time (by hours increments up to four hours)
+- User can filter recipes based off of cuisine
+- User can view recipe overviews on the main page (includes photo, name, time to cook, and rating)
+- User can click on any recipe to see additional recipe information (Description, and number of reviewers)
+- User can click on view recipe button to be taken to that recipes cooking page
+- Sidebar at the top left of the screen includes links to Profile, Fridge, and Purchasing pages
+
 
 View Individual Recipies:
 - User can see a picture of the recipe, the title, cooking time, serving size, nutritional value, as well as rating.
@@ -46,5 +54,6 @@ Features not implemented:
 - No syncronization between orders and order history (no database to support this)
 - Profile details (credit card, name, address, etc.) not stored
 - No backend to support inventory state (removed after exit)
-- No terms of service 
+- No terms of service
+- No backend to support nutrient retreival for recipes
 - No reviews viewable on recipes due to lack of backend

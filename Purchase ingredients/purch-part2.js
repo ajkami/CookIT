@@ -828,7 +828,6 @@ document
     };
     sessionStorage.setItem("cardDetails", cardDetails);
   });
-
   function confirmOrder() {
     document.getElementById("loading-screen-truck").style.display = "grid";
   

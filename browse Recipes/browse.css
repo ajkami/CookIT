@@ -201,6 +201,15 @@ button[type="submit"]:hover {
     z-index: 2;
 }
 
+.cuisine-filter-popup {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  z-index: 2;
+}
+
 /* Main Styles */
 main {
     padding: 20px;
@@ -290,6 +299,16 @@ li {
     background-color: antiquewhite;
     color: black;
     cursor: pointer;
+}
+
+.cuisine-options {
+  margin: 0 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: antiquewhite;
+  color: black;
+  cursor: pointer;
 }
 
 .close {
@@ -396,6 +415,11 @@ button[type="submit"]:hover {
   color: #222; /* Darker text color */
 }
 
+.cuisine-options {
+  background-color: #f5deb3; /* Light goldenrod color for time options */
+  color: #222; /* Darker text color */ 
+}
+
 /* Stars */
 .stars1::before,
 .stars2::before,
@@ -454,6 +478,10 @@ button[type="submit"]:hover {
   border-radius: 10px; 
 } 
 
+.hidden {
+  display: none;
+}
+
 /*
 input[type=text] { 
    width: 30%; 
@@ -461,12 +489,7 @@ input[type=text] {
    transition: width 0.15s ease-in-out; 
 } 
 
-/* When the input field gets focus, 
-     change its width to 100% */
 input[type=text]:focus { 
   width: 70%; 
 } 
 */
-.hidden {
-  display: none;
-}

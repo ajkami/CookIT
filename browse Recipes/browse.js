@@ -7,6 +7,14 @@ function openPopup() {
       document.getElementById("myPopup").style.display = "none";
   }
 
+  let navOpen = false;
+  function toggleNav(sidenavId) {
+      const isOpen = navOpen;
+      const width = isOpen ? "0" : "300px";
+      navOpen = !navOpen;
+      document.getElementById(sidenavId).style.width = width;
+  }
+
   function openPopupCuisine() {
       document.getElementById("myPopup2").style.display = "block";
   }

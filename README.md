@@ -19,6 +19,11 @@ View Transactions:
 Browse Recipes:
 
 View Individual Recipies:
+- User can see a picture of the recipe, the title, cooking time, serving size, nutritional value, as well as rating.
+- User can see the ingredients the recipe requires, as well as the steps, and they can check off the steps as they go to keep track of their progress.
+- User can click on the complete recipe button once they are done which is when a pop-up notifies them that their ingredients have been updated. 
+- User can click on the next button, revealing a new pop-up where the user can rate the recipe and leave a review.
+- Whether the user chooses to leave a review or skip, they will be redirected to their inventory.
 
 Shop for Ingredients:
 
@@ -42,3 +47,4 @@ Features not implemented:
 - Profile details (credit card, name, address, etc.) not stored
 - No backend to support inventory state (removed after exit)
 - No terms of service 
+- No reviews viewable on recipes due to lack of backend

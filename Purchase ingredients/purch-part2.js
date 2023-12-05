@@ -463,7 +463,7 @@ document
 window.onload = function () {
   var userLocation = sessionStorage.getItem("userLocation");
   if (!userLocation) {
-    document.getElementById("location-popup").style.display = "block";
+    document.getElementById("location-popup").style.display = "grid";
     disableScrolling();
   }
 };

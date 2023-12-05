@@ -664,7 +664,7 @@ document.getElementById("pickupButton").addEventListener("click", function () {
 document.getElementById("dropoffButton").addEventListener("click", function () {
   DELIVERY_CHARGE = 10;
   updateCartTotals();
-  document.getElementById("pickdrop-header").innerText = "Drop off location";
+  document.getElementById("pickdrop-header").innerText = "Drop off Address:";
   document.getElementById("location-drop-off").style.display = "none";
   // });
   document.getElementById("locationInput").style.display = "block";

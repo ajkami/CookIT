@@ -26,6 +26,20 @@ const dummyLocations = [
   "42 Wallaby Way, Sydney",
 ];
 
+let navOpen = false;
+function toggleNav(sidenavId) {
+  const isOpen = (sidenavId === "mySidenav") ? navOpen : fridgenavOpen;
+  const width = isOpen ? "0" : "300px";
+
+  if (sidenavId === "mySidenav") {
+      navOpen = !navOpen;
+  } else if (sidenavId === "fridgeSidenav") {
+      fridgenavOpen = !fridgenavOpen;
+  }
+
+  document.getElementById(sidenavId).style.width = width;
+}
+
 function getDefaults() {
   showPreviouslyBought();
   showCategory("Fruits");

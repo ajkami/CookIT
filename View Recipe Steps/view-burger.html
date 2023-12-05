@@ -8,36 +8,19 @@
 </head>
 
 <body>
-    <div class="main-header">
-        <input type="checkbox" id="menuToggle"> <!-- Input with id="menuToggle" -->
-        <label for="menuToggle" class="menu-toggle-label">&#9776;</label> <!-- Label with class, not id -->
-        <nav class="sidebar">
-            <div class="nav-container">
-                <label for="menuToggle" class="close-button"><span class="close-text"></span></label>
-                <a href="../browse Recipes/browse.html" class="menu-item home-icon">
-                    <span class="icon">&#x1F3E0;</span>
-                    <span class="text home-text">Browse Recipes</span>
-                </a>
-                <a href="../Purchase ingredients/purch-part2.html" class="menu-item shop-icon">
-                    <span class="icon">&#x1F6D2;</span>
-                    <span class="text shop-text">Shop</span>
-                </a>
-                <a href="../Fridge/inventory.html" class="menu-item fridge-icon">
-                    <span class="icon">&#x2744;</span>
-                    <span class="text fridge-text">Inventory</span>
-                </a>
-                <a href="../Login-Register-Profile/Profile.html" class="menu-item profile-icon">
-                    <span class="icon">&#x1F464;</span>
-                    <span class="text profile-text">Profile</span>
-                </a>
-            </div>
-        </nav>
-        <div class="header-title">
-            <h1 onclick="document.location='../browse Recipes/browse.html'"
-                style="cursor: pointer; margin: 0; color:black;">CookIT</h1>
+    <header>
+        <div>
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('mySidenav')">&times;</a>
+            <a href="../browse Recipes/browse.html">Browse Recipes</a>
+            <a href="../Purchase ingredients/purch-part2.html">Shop</a>
+            <a href="../Login-Register-Profile/Profile.html">Profile</a>
+            <a href="../Fridge/inventory.html">Inventory</a>
+          </div>
+          <span style="font-size:30px;cursor:pointer" onclick="toggleNav('mySidenav')">&#9776;</span>
         </div>
-
-    </div>
+        <h1 onclick="document.location='../browse Recipes/browse.html'">CookIT</h1>
+      </header>
     <img class="picture" src="./images/loaded-burgers.jpg" alt="pizza" />
     <div style="margin: 10px;">
         <h1>Easy Cheeseburger</h1>
@@ -110,7 +93,7 @@
         <span class="closeBtn" onclick="closePopup('popup2')">&times;</span>
         <h1 style="text-align: center; margin-bottom: 0;">Write a review</h1>
         <div class="rating-box">
-            <header style="font-size: 1rem; color: black;">Tell us what you think of this recipe!</header>
+            <p style="font-size: 1rem; color: black;">Tell us what you think of this recipe!</p>
             <div class="stars">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
@@ -136,47 +119,7 @@
 
     <button style="float:right; margin: 0 30px 30px 0"class="button button1" onclick="openPopup('popup1')">Complete Recipe!</button>
 
-    <script>
-        function openPopup(popupId) {
-            popupElement = document.getElementById(popupId)
-            if (popupId === 'popup2') {
-                document.getElementById('popup1').style.display = 'none';
-            }
-            popupElement.style.display = 'flex';
-            document.getElementById('overlay').style.display = 'block';
-
-            popupElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-
-        function closePopup(popupId) {
-            document.getElementById(popupId).style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        }
-
-
-        // trigger.addEventListener("click", toggleModal);
-        // closeButton.addEventListener("click", toggleModal);
-        // window.addEventListener("click", windowOnClick);
-
-        // Select all elements with the "i" tag and store them in a NodeList called "stars"
-        const stars = document.querySelectorAll(".stars i");
-
-        // Loop through the "stars" NodeList
-        stars.forEach((star, index1) => {
-            // Add an event listener that runs a function when the "click" event is triggered
-            star.addEventListener("click", () => {
-                // Loop through the "stars" NodeList Again
-                stars.forEach((star, index2) => {
-                    // Add the "active" class to the clicked star and any stars with a lower index
-                    // and remove the "active" class from any stars with a higher index
-                    index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
-                });
-            });
-        });
-
-
-
-    </script>
+    <script src="view.js"></script>
 </body>
 
 </html>

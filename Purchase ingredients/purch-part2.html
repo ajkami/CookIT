@@ -10,53 +10,54 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   </head>
   <body>
-    <header>
-        <div id="loading-screen-container">
-            <span class="loader"></span>
-        </div>
-        <div id="loading-screen-truck">
-            <span class="truck"></span>
-        </div>
-        <div id="check-mark-container">
-            <div class="wrapper">
-                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"> <circle class="checkmarkcircle" cx="26" cy="26" r="25" fill="none"/> <path class="checkmarkcheck" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                <span>Your Order Number is</span>
-                <span>#235341</span>
-            </svg>
+      <header>
+        <div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('mySidenav')">&times;</a>
+                <a href="../browse Recipes/browse.html">Browse Recipes</a>
+                <a href="inventory.html">Inventory</a>
+                <a href="../Login-Register-Profile/Profile.html">Profile</a>
             </div>
-        </div>
-        <div id="location-popup" class="popup">
-            <div id="location-popupcontent" class="popup-content" >
-                <h2>Select Your Location</h2>
-                <div class="choose-store-location-container"> <input type="text" id="location-input" placeholder="Enter your location" oninput="showStoreRecommendations(this.value)">
-                    <div id="store-recommendations"></div></div>
-            
-                <button id="location-submit" onclick = "getDefaults()">Submit</button>
-            </div>
-        </div>
-      <div id="sidebar">
-        <ul>
-          <li><a href="../Fridge/inventory.html">My Fridge</a></li>
-          <li>
-            <a href="../Login-Register-Profile/Profile.html">My Favorites</a>
-          </li>
-          <li>
-            <a href="purch-part2.html">My Shopping List</a>
-          </li>
-          <li>
-            <a href="../browse Recipes/browse.html">Browse Recipes</a>
-          </li>
-        </ul>
-      </div>
-      <div class="header-top"><button class="sidebar-btn" onclick="toggleSidebar()">
-        <i class="fa fa-bars"></i>
-    </button>
-      <div class="logo">CookIt</div>
-      <div class="cart-container">
-        <button id="icon-btn"onclick="toggleCartSidebar()"><i class="fa fa-shopping-cart"></i></button>
 
-      </div></div>
-      <div class="header-bottom">      <a href = "#previously-bought-wrapper"><i class="fas fa-history"></i> Previously Bought</a></div>
+            <!-- three lines icons -->
+            <span style="font-size:30px;cursor:pointer" onclick="toggleNav('mySidenav')">&#9776;</span>
+        </div>
+        <h1 onclick="document.location='../browse Recipes/browse.html'">CookIT</h1>
+        <div>
+            <div id="fridgeSidenav" class="sidenav fridgeSidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('fridgeSidenav')">&times;</a>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <button id="icon-btn"onclick="toggleCartSidebar()"><i class="fa fa-shopping-cart"></i></button>
+                <a href = "#previously-bought-wrapper"><i class="fas fa-history"></i> Previously Bought</a>
+            </div>
+        </div>
+    </header>
+
+      <div id="location-popup" class="popup">
+        <div id="location-popupcontent" class="popup-content" >
+            <h2>Select Your Location</h2>
+            <div class="choose-store-location-container"> <input type="text" id="location-input" placeholder="Enter your location" oninput="showStoreRecommendations(this.value)">
+                <div id="store-recommendations"></div></div>
+        
+            <button id="location-submit" onclick = "getDefaults()">Submit</button>
+        </div>
+    </div>
+
+    <div id="loading-screen-container">
+        <span class="loader"></span>
+    </div>
+    <div id="loading-screen-truck">
+        <span class="truck"></span>
+    </div>
+    <div id="check-mark-container">
+        <div class="wrapper">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"> <circle class="checkmarkcircle" cx="26" cy="26" r="25" fill="none"/> <path class="checkmarkcheck" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            <span>Your Order Number is</span>
+            <span>#235341</span>
+        </svg>
+        </div>
+    </div>
 
       <div id="cart-bar" >
         <div onclick = "backToCart()" class="close-cart-container">

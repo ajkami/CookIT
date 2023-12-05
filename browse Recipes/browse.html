@@ -7,56 +7,53 @@
     <title>CookIT</title>
     <link rel="stylesheet" href="browse.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <header>
+        <div>
+          <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="toggleNav('mySidenav')">&times;</a>
+            <a href="../Purchase ingredients/purch-part2.html">Shop</a>
+            <a href="../Login-Register-Profile/Profile.html">Profile</a>
+            <a href="../Fridge/inventory.html">Inventory</a>
+          </div>
+          <span style="font-size:30px;cursor:pointer" onclick="toggleNav('mySidenav')">&#9776;</span>
+        </div>
+        <h1 onclick="document.location='../browse Recipes/browse.html'">CookIT</h1>
+      </header>
   </head>
   <body>
-        <header>
-            <div class="container">
-                <div class="container-content">
-                    <h1 class="title">CookIt</h1>
-                    <div class="search-container">
-                        <input type="text" id="searchbar" onkeyup="search_recipe()" name="search" placeholder="Search recipes...">
-                    </div>
-                    <div class="filter-buttons">
-                        <button class="time-filter" onclick="openPopup()">Time</button>
-                        <button class="cuisine-filter" onclick="openPopupCuisine()">Cuisine</button>
-                        <button class="ingredients-filter">Ingredients</button>
-                        <button class="Nutrition-filter">Nutritional Value</button>
-                    </div>
-                </div>
+        <div>
+            <img src="./img/fp-fp-6661.jpg" style="position: relative; width: 100vw; height: 50vmin; object-fit: cover;"/>
+            <div style="position: absolute; top: 25%; left: 49%; transform: translateX(-50%); width:100%;" class="search-container">
+                <input type="text" id="searchbar" onkeyup="search_recipe()" name="search" placeholder="Search recipes...">
             </div>
-            <label class="hamburger-menu">
-                <input type="checkbox" />
-              </label>
-              <aside class="sidebar">
-                <nav>
-                  <div><a href="../Fridge/inventory.html">Inventory</a></div>
-                  <div><a href="../Login-Register-Profile/Profile.html">Profile</a></div>
-                  <div><a href="../Purchase ingredients/purch-part2.html">Shopping List</a></div>
-                </nav>
-              </aside>
-            <div class="popup" id="myPopup">
-                <div class="popup-content">
-                    <span class="close" onclick="closePopup()">&times;</span>
-                    <ul>
-                        <li><button class="time-options" data-filter="1hr" onclick="filterSelection(event)">< 1 hr</button></li>
-                        <li><button class="time-options" data-filter="2hr" onclick="filterSelection(event)">< 2 hrs</button></li>
-                        <li><button class="time-options" data-filter="3hr" onclick="filterSelection(event)">< 3 hrs</button></li>
-                        <li><button class="time-options" data-filter="4hr" onclick="filterSelection(event)">< 4 hrs</button></li>
-                    </ul>
-                </div>
+            <div style="position: absolute; top: 35%; left: 51%; transform: translateX(-50%);" class="filter-buttons">
+                <button class="time-filter" onclick="openPopup()">Time</button>
+                <button class="cuisine-filter" onclick="openPopupCuisine()">Cuisine</button>
             </div>
-            <div class="popup" id="myPopup2">
-                <div class="popup-content">
-                    <span class="close" onclick="closePopupCuisine()">&times;</span>
-                    <ul>
-                        <li><button class="time-options" data-filter="American" onclick="filterSelection(event)">American</button></li>
-                        <li><button class="time-options" data-filter="Italian" onclick="filterSelection(event)">Italian</button></li>
-                        <li><button class="time-options" data-filter="Mongolian" onclick="filterSelection(event)">Mongolian</button></li>
-                        <li><button class="time-options" data-filter="Nordic" onclick="filterSelection(event)">Nordic</button></li>
-                    </ul>
-                </div>
+        </div>
+
+        <div class="popup" id="myPopup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <ul>
+                    <li><button class="time-options" data-filter="1hr" onclick="filterSelection(event)">< 1 hr</button></li>
+                    <li><button class="time-options" data-filter="2hr" onclick="filterSelection(event)">< 2 hrs</button></li>
+                    <li><button class="time-options" data-filter="3hr" onclick="filterSelection(event)">< 3 hrs</button></li>
+                    <li><button class="time-options" data-filter="4hr" onclick="filterSelection(event)">< 4 hrs</button></li>
+                </ul>
             </div>
-        </header>
+        </div>
+        <div class="popup" id="myPopup2">
+            <div class="popup-content">
+                <span class="close" onclick="closePopupCuisine()">&times;</span>
+                <ul>
+                    <li><button class="time-options" data-filter="American" onclick="filterSelection(event)">American</button></li>
+                    <li><button class="time-options" data-filter="Italian" onclick="filterSelection(event)">Italian</button></li>
+                    <li><button class="time-options" data-filter="Mongolian" onclick="filterSelection(event)">Mongolian</button></li>
+                    <li><button class="time-options" data-filter="Nordic" onclick="filterSelection(event)">Nordic</button></li>
+                </ul>
+            </div>
+        </div>
         <main>
             <div class="text-block">
                 <h2>About CookIt</h2>

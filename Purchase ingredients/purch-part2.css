@@ -431,6 +431,7 @@ header img {
   display: flex; /* Aligns icon and text */
   align-items: center; /* Centers content vertically */
   justify-content: center; /* Centers content horizontally */
+  width: 75%;
 }
 
 #icon-btn:hover {

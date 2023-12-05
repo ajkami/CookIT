@@ -24,16 +24,16 @@ Shop for Ingredients:
 
 View Inventory:
 - User can see items they have
-- User can edit quantity of the items
-- User can remove any item from the inventory
-- User can add item to the inventory
+- User can increment or decrement quantity of the item they have by clicking the item they want to edit and pressing "-" or "+" button beside the quantity textbox
+- User can remove any item from the inventory by decreasing the quantity until 0 with the "-" button
+- User can add item to the inventory by pressing the big "+" button on the bottom right of the page
 
 Add Ingredients to Inventory:
-- User can add multiple items to the inventory at once
-- User can remove items they dont want to add to inventory anymore
-- User can edit quantity of the item to be added
-- User can search for an item they want to add
-- User can filter item display by their category
+- User can search for a specific item they want to add to inventory by typing it inside the search bar
+- User can browse items sorted by category by pressing one of the button "fruit", "dairy", "baked goods"
+- User can add multiple items to the inventory at once by pressing "add to inventory" button on the item they want to add
+- User can remove items they dont want to add to inventory anymore by pressing "remove" button on the sidebar
+- User can increment or decrement quantity of the item they want to add by pressing "-" or "+" button on the sidebar
 
 Features not implemented:
 - Protected routing (all pages are accessible regardless of Login State, no cookie history)

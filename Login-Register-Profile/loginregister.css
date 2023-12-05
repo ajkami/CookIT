@@ -31743,6 +31743,9 @@ input.u-field-input.u-field-input.u-border-active-color-2-dark-3:checked {
   border-color: #6b4748;
   stroke: #6b4748;
 }
+.sidenav{
+  z-index:4;
+}
 .u-button-style.u-border-color-2-dark-2 {
   border-color: #6b4748 !important;
   color: #6b4748 !important;

@@ -684,6 +684,27 @@ function backToCart() {
   document.getElementById("checkout-button").style.display = "block";
 }
 
+function addSpecialInstructionsField() {
+  // Create a new text input element
+  var inputField = document.createElement("input");
+  inputField.type = "text";
+  inputField.placeholder = "Optional delivery instruction...";
+  inputField.id = "special-instructions"; // You can give it an ID if you need to reference it later
+
+  // Get the preferred date container and the second div inside it
+  var preferredDateContainer = document.querySelector(".preferred-date-container");
+  var secondDiv = preferredDateContainer.querySelectorAll("div")[1]; // Assuming it's the second div
+
+  // Append the new input field after the second div
+  secondDiv.parentNode.insertBefore(inputField, secondDiv.nextSibling);
+}
+
+// Add event listener to dropoffButton
+document.getElementById("dropoffButton").addEventListener("click", function() {
+  // Add the special instructions field
+  addSpecialInstructionsField();
+});
+
 document
   .getElementById("payment-form")
   .addEventListener("submit", function (event) {

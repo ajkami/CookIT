@@ -1,3 +1,7 @@
+let timeFilter = "all"; // Default filter value for time
+let cuisineFilter = "all"; // Default filter value for cuisine
+
+
 function openPopup() {
   document.getElementById("myPopup").style.display = "block";
 }
@@ -360,12 +364,45 @@ function search_recipe() {
   }
 }
 
-function filterSelection(e) {
+
+
+
+function filterRecipes() {
+  console.log("s");
   const recipes = document.querySelectorAll(".recipe");
-  let filter = e.target.dataset.filter;
   recipes.forEach((recipe) => {
-    recipe.classList.contains(filter)
-      ? recipe.classList.remove("hidden")
-      : recipe.classList.add("hidden");
+    const matchesTime =
+      timeFilter === "all" || recipe.classList.contains(timeFilter);
+    const matchesCuisine =
+      cuisineFilter === "all" || recipe.classList.contains(cuisineFilter);
+    if (matchesTime && matchesCuisine) {
+      console.log(recipe, "asd");
+      recipe.style.display = "";
+    } else {
+      console.log(recipe, "none");
+      recipe.style.display = "none";
+    }
   });
 }
+function updateFilters(filterType, value) {
+  console.log(filterType, value);
+  if (filterType === "time") {
+    console.log("time");
+    timeFilter = value;
+  } else if (filterType === "cuisine") {
+    console.log("cuisine");
+    cuisineFilter = value;
+  }
+  console.log("fd");
+  filterRecipes();
+  console.log("fd2");
+}
+
+function filterSelection(e) {
+  const filterType = e.target.getAttribute("data-filter-type");
+  const filterValue = e.target.dataset.filter;
+  updateFilters(filterType, filterValue);
+}
+
+
+

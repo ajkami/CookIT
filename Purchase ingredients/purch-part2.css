@@ -384,12 +384,14 @@ header img {
 }
 
 #location-submit {
-  padding: 10px 20px;
+  padding: 5px 10px;
   background-color: black; /* Green background */
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
+  width: 60%;
+  align-self: center;
 }
 
 #sidebar {

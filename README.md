@@ -34,6 +34,23 @@ View Individual Recipies:
 - Whether the user chooses to leave a review or skip, they will be redirected to their inventory.
 
 Shop for Ingredients:
+- User can choose a location for the store using search bar in pop up. 
+- User can search for a specific item to add to cart using the search bar by typing in to the text field provided then clicking on to one of the options in the drop box or pressing on to the search button. 
+- User can browse for items by filtering through the different categories provided. User will click on to one of the categories provided under the Browse Categories header. 
+- User can add an item into the shopping cart by clicking on to the "Add to Cart" button.
+- User can view and add previously bought items by clicking on to the "Previously Bought" navigation button on the top right of main header beneath Cart button.
+- User can view items added to cart by clicking on to the cart trolley icon button.
+- User can increment/decrement quantity of specific items added to cart by pressing "-" or "+" button beside the quantity textbox.
+- User can remove a specific item added to cart by clicking on to "Remove" button placed beside the item.
+- user can proceed to Checkout cart items with a non-empty cart, by clicking on to "Checkout Now" button placed under 
+grand total
+- User can choose either dropoff or pickup for grocery delivery method by clicking on to one of the options in the Checkout div in cart
+- Logged-in user can use their card details linked to their account by pressing on to the "Saved Card" button beneath card details text fields
+- User can use valid card details by entering information into the text fields using keyboard and pressing on to the "Choose This Payment" button
+- User can save entered card details in text fields by ticking off checkmark beside label "Save card details"
+- User can enter special delivery instructions if they choose dropoff for grocery delivery method
+- User can confirm their total order, and receive a confirmation number, for grocery purchase by clicking on to the "Confirm Order" button after filling out all required fields
+  
 
 View Inventory:
 - User can see items they have

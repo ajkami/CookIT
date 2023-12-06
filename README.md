@@ -25,7 +25,6 @@ Browse Recipes:
 - User can click on view recipe button to be taken to that recipes cooking page
 - Sidebar at the top left of the screen includes links to Profile, Fridge, and Purchasing pages
 
-
 View Individual Recipies:
 - User can see a picture of the recipe, the title, cooking time, serving size, nutritional value, as well as rating.
 - User can see the ingredients the recipe requires, as well as the steps, and they can check off the steps as they go to keep track of their progress.
@@ -34,8 +33,8 @@ View Individual Recipies:
 - Whether the user chooses to leave a review or skip, they will be redirected to their inventory.
 
 Shop for Ingredients:
-- User can choose a location for the store using search bar in pop up. 
-- User can search for a specific item to add to cart using the search bar by typing in to the text field provided then clicking on to one of the options in the drop box or pressing on to the search button. 
+- First, user must choose a location for the store using search bar in pop up. 
+- User can then search for a specific item to add to cart using the search bar by typing in to the text field provided then clicking on to one of the options in the drop box or pressing on to the search button. 
 - User can browse for items by filtering through the different categories provided. User will click on to one of the categories provided under the Browse Categories header. 
 - User can add an item into the shopping cart by clicking on to the "Add to Cart" button.
 - User can view and add previously bought items by clicking on to the "Previously Bought" navigation button on the top right of main header beneath Cart button.
@@ -51,7 +50,6 @@ grand total
 - User can enter special delivery instructions if they choose dropoff for grocery delivery method
 - User can confirm their total order, and receive a confirmation number, for grocery purchase by clicking on to the "Confirm Order" button after filling out all required fields
   
-
 View Inventory:
 - User can see items they have
 - User can increment or decrement quantity of the item they have by clicking the item they want to edit and pressing "-" or "+" button beside the quantity textbox
@@ -74,3 +72,5 @@ Features not implemented:
 - No terms of service
 - No backend to support nutrient filtering for recipes
 - No reviews viewable on recipes due to lack of backend
+- No backend to support saved cards
+- No backend to support previously purchased items

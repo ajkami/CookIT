@@ -1,4 +1,4 @@
-# Assignment2-481
+# CookIT Application
 Desktop version of CookIT Application
 Graydon Benson, Habiba Abuelazm, Maira Khan, Carlos Sujanto, Auric Adubofour-Poku
 
